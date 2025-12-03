@@ -152,16 +152,13 @@ const year = new Date().getFullYear();
           <p class="section-text">
             As a lender, you place money into AmicBridge. That money is used to fund
             loans for borrowers on the platform. You earn interest when those loans
-            are repaid. Lending can be done using <strong>normal currency (fiat)</strong>,
-            <strong>crypto assets</strong> like BTC or ETH, or <strong>regulated stablecoins</strong>
-            such as USDC, USDT or EURC.
+            are repaid.
           </p>
 
           <ul class="bullet-list">
-            <li>Lend using fiat currency, crypto assets or stablecoins.</li>
             <li>Your money goes to people, not a bank balance sheet.</li>
-            <li>Expected return and risks shown before lending.</li>
-            <li>You may split between lending and the 3% Save product.</li>
+            <li>You see expected return and risk information before lending.</li>
+            <li>You may choose to split between lending and the 3% Save product.</li>
           </ul>
 
           <div class="info-card">
@@ -193,9 +190,8 @@ const year = new Date().getFullYear();
         <div class="form-card" aria-label="Lender request form">
           <h3>Send a lender request</h3>
           <p class="form-text">
-            Complete this form if you are interested in lending through AmicBridge.
-            Lending can be done using fiat, crypto or regulated stablecoins (USDC,
-            USDT, EURC, etc). The information will be sent to the team.
+            Complete this form if you are interested in lending money through
+            AmicBridge. The information will be sent by e-mail to the team.
           </p>
 
           <form
@@ -222,30 +218,11 @@ const year = new Date().getFullYear();
             </label>
 
             <label class="field">
-              <span>What do you want to lend?</span>
-              <select name="Lend type" required>
-                <option value="">Choose option</option>
-                <option value="Fiat">Normal fiat currency</option>
-                <option value="Crypto">Crypto assets (BTC, ETH, etc)</option>
-                <option value="Stablecoins">Stablecoins (USDC, USDT, EURC)</option>
-              </select>
-            </label>
-
-            <label class="field">
-              <span>Which currency or asset?</span>
-              <input
-                type="text"
-                name="Currency or asset"
-                placeholder="EUR, USD, BTC, ETH, USDC, USDT, EURC, etc"
-              />
-            </label>
-
-            <label class="field">
               <span>Approximate amount you want to lend</span>
               <input
                 type="text"
                 name="Lend amount"
-                placeholder="Example: 2000 EUR, 0.5 BTC, 5000 USDC"
+                placeholder="For example: 2 000 EUR"
               />
             </label>
 
@@ -265,7 +242,7 @@ const year = new Date().getFullYear();
               <textarea
                 name="Message"
                 rows="3"
-                placeholder="Describe conditions, expectations or questions."
+                placeholder="Write anything about your situation or expectations."
               ></textarea>
             </label>
 
@@ -274,7 +251,8 @@ const year = new Date().getFullYear();
             </button>
 
             <p class="small-note">
-              Your e-mail program will open with this information so you can send it directly to AmicBridge.
+              Your e-mail program will open with this information so you can send it
+              directly to AmicBridge.
             </p>
           </form>
         </div>
@@ -294,7 +272,7 @@ const year = new Date().getFullYear();
 
           <ul class="bullet-list">
             <li>No visits to a physical bank office or traditional paperwork.</li>
-            <li>See total cost and repayment schedule before accepting.</li>
+            <li>See total cost and repayment schedule before you accept anything.</li>
             <li>Use crypto as collateral instead of selling long-term holdings.</li>
           </ul>
 
@@ -328,8 +306,8 @@ const year = new Date().getFullYear();
         <div class="form-card" aria-label="Borrower request form">
           <h3>Send a borrower request</h3>
           <p class="form-text">
-            Complete this form if you are interested in borrowing through AmicBridge.
-            The information will be sent by e-mail to the team.
+            Complete this form if you are interested in borrowing through
+            AmicBridge. The information will be sent by e-mail to the team.
           </p>
 
           <form
@@ -360,7 +338,7 @@ const year = new Date().getFullYear();
               <input
                 type="text"
                 name="Borrow amount"
-                placeholder="Example: 5000 EUR"
+                placeholder="For example: 5 000 EUR"
               />
             </label>
 
@@ -369,16 +347,16 @@ const year = new Date().getFullYear();
               <textarea
                 name="Purpose"
                 rows="3"
-                placeholder="Short description (example: start business, reduce debt, home repair)"
+                placeholder="Short description (for example: pay down other debt, home repair, business idea)."
               ></textarea>
             </label>
 
             <label class="field">
-              <span>Crypto you can provide as collateral</span>
+              <span>Crypto you can use as collateral</span>
               <input
                 type="text"
                 name="Collateral"
-                placeholder="Example: BTC, ETH, USDC"
+                placeholder="For example: BTC, ETH, USDC"
               />
             </label>
 
@@ -462,14 +440,14 @@ const year = new Date().getFullYear();
           <details class="faq-item">
             <summary>Who provides the money for loans?</summary>
             <p>
-              All lending capital comes from people who choose to lend through
-              AmicBridge. When you borrow, you borrow from a pool funded by many
-              private lenders, not from a bank’s own funds.
+              All lending capital comes from people who choose to lend money through
+              AmicBridge. When you borrow, you are borrowing from a pool funded by
+              many private lenders, not from a bank’s own funds.
             </p>
           </details>
 
           <details class="faq-item">
-            <summary>Are returns or the 3% Save yield guaranteed?</summary>
+            <summary>Are returns and the 3% Save yield guaranteed?</summary>
             <p>
               No. All returns are targets or estimates. Crypto and peer-to-peer
               lending involve risk, and you can lose money. There are no guarantees.
@@ -477,10 +455,11 @@ const year = new Date().getFullYear();
           </details>
 
           <details class="faq-item">
-            <summary>How do I start?</summary>
+            <summary>How do I get started?</summary>
             <p>
-              Use one of the request forms on this page, or e-mail the team directly.
-              Automated flows will come later as the platform grows.
+              Use the lender or borrower forms on this page, or contact the team
+              directly by e-mail. As the platform develops, more automated flows
+              will become available.
             </p>
           </details>
         </div>
@@ -540,5 +519,589 @@ const year = new Date().getFullYear();
 </Layout>
 
 <style>
-  /* Entire CSS identical to previous version */
+  :global(body) {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --color-bg: #f3f4f6;
+    --color-bg-card: #ffffff;
+    --color-border: #e5e7eb;
+    --color-muted: #6b7280;
+    --color-text: #111827;
+    --color-primary: #111827;
+    --color-primary-hover: #020617;
+    --color-secondary-bg: #e5e7eb;
+    --color-secondary-border: #d1d5db;
+  }
+
+  .page {
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* TOP BAR */
+
+  .top-bar {
+    background: #111827;
+    color: #e5e7eb;
+    font-size: 0.8rem;
+  }
+
+  .top-bar-inner {
+    padding: 0.45rem 0;
+    text-align: center;
+  }
+
+  /* HEADER */
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    gap: 1rem;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-link {
+    color: #4b5563;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    color: var(--color-text);
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .btn {
+    border-radius: 999px;
+    border: 1px solid transparent;
+    padding: 0.45rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: #f9fafb;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-hover);
+  }
+
+  .btn-secondary {
+    background: var(--color-secondary-bg);
+    color: var(--color-text);
+    border-color: var(--color-secondary-border);
+  }
+
+  .btn-secondary:hover {
+    background: #d1d5db;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-secondary-border);
+  }
+
+  .btn-ghost:hover {
+    background: #f3f4f6;
+  }
+
+  .btn-full {
+    width: 100%;
+  }
+
+  /* HERO */
+
+  .hero {
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+    padding: 3rem 0 2.5rem;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.1rem;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    color: #4b5563;
+    max-width: 36rem;
+  }
+
+  .hero-subtitle strong {
+    font-weight: 600;
+  }
+
+  .hero-actions {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .dot {
+    font-size: 1.1rem;
+    line-height: 0;
+  }
+
+  .hero-card {
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    padding: 1.25rem 1.3rem;
+  }
+
+  .hero-card-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.92rem;
+    color: #374151;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .hero-list li {
+    display: grid;
+    gap: 0.1rem;
+  }
+
+  .hero-list strong {
+    font-weight: 600;
+  }
+
+  .hero-list span {
+    font-size: 0.88rem;
+    color: #4b5563;
+  }
+
+  /* TRUST STRIP */
+
+  .trust-strip {
+    background: #f9fafb;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .trust-inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+    padding: 1.75rem 0;
+    font-size: 0.9rem;
+  }
+
+  .trust-item p {
+    margin: 0.2rem 0 0;
+    color: #4b5563;
+  }
+
+  .trust-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--color-muted);
+  }
+
+  /* SECTIONS */
+
+  .section {
+    padding: 2.75rem 0;
+  }
+
+  .section-muted {
+    background: #f9fafb;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+    color: #4b5563;
+  }
+
+  .section-text {
+    font-size: 0.96rem;
+    color: #374151;
+    margin-bottom: 0.75rem;
+  }
+
+  .two-column {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.1fr);
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    font-size: 0.94rem;
+    color: #374151;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .bullet-list li::before {
+    content: "•";
+    margin-right: 0.4rem;
+    color: #9ca3af;
+  }
+
+  /* STEPS */
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .step {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    font-size: 0.94rem;
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: #f9fafb;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .step h3 {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .step p {
+    color: #4b5563;
+  }
+
+  /* INFO CARDS */
+
+  .info-card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    padding: 1rem 1.2rem;
+    font-size: 0.92rem;
+  }
+
+  .info-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .info-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .info-list div {
+    margin-bottom: 0.5rem;
+  }
+
+  .info-list dt {
+    font-size: 0.84rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+  }
+
+  .info-list dd {
+    margin: 0.1rem 0 0;
+    color: var(--color-text);
+  }
+
+  .small-note {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+  }
+
+  /* FORMS */
+
+  .form-card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    padding: 1.1rem 1.25rem;
+    font-size: 0.92rem;
+  }
+
+  .form-card h3 {
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+  }
+
+  .form-text {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+  }
+
+  .form {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .field {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .field span {
+    font-size: 0.82rem;
+    color: #4b5563;
+  }
+
+  input,
+  select,
+  textarea {
+    border-radius: 0.45rem;
+    border: 1px solid #d1d5db;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--color-text);
+    background: #ffffff;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px #11182712;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  /* FAQ */
+
+  .faq {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    padding: 0.7rem 0.9rem;
+    font-size: 0.94rem;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 500;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    margin-top: 0.45rem;
+    color: #4b5563;
+  }
+
+  /* COMPANY */
+
+  .company {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .contact-box {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    background: #f9fafb;
+    font-size: 0.93rem;
+  }
+
+  .contact-box a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .contact-box a:hover {
+    text-decoration: underline;
+  }
+
+  .company-note {
+    font-size: 0.92rem;
+    color: #4b5563;
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    padding: 1rem 1.2rem;
+  }
+
+  .company-note h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    border-top: 1px solid var(--color-border);
+    background: #ffffff;
+    padding: 1.25rem 0 1.75rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+  }
+
+  .footer-note {
+    max-width: 40rem;
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 900px) {
+    .hero-inner,
+    .two-column,
+    .company {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .hero-card {
+      order: -1;
+    }
+
+    .trust-inner {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 2.25rem;
+    }
+
+    .steps {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
 </style>
