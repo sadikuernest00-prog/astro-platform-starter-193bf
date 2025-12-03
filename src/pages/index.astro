@@ -1,3 +1,4 @@
+
 ---
 import Layout from "../layouts/Layout.astro";
 
@@ -15,6 +16,8 @@ const year = new Date().getFullYear();
 
         <nav class="nav">
           <a href="#how-it-works" class="nav-link">How it works</a>
+          <a href="#lending" class="nav-link">Lending</a>
+          <a href="#borrowing" class="nav-link">Borrowing</a>
           <a href="#products" class="nav-link">Products</a>
           <a href="#security" class="nav-link">Security</a>
           <a href="#company" class="nav-link">Company</a>
@@ -46,8 +49,8 @@ const year = new Date().getFullYear();
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary btn-lg" href="#">Start lending</a>
-            <a class="btn btn-ghost btn-lg" href="#how-it-works">See how it works</a>
+            <a class="btn btn-primary btn-lg" href="#lending">I want to lend</a>
+            <a class="btn btn-ghost btn-lg" href="#borrowing">I want to borrow</a>
           </div>
 
           <div class="hero-trust">
@@ -158,6 +161,114 @@ const year = new Date().getFullYear();
               code. Everyone sees the same rules and the same data, always
               visible on the blockchain.
             </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LENDING SECTION -->
+    <section id="lending" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Lending on AmicBridge</h2>
+          <p>
+            Become a lender and let your money work for you by helping real
+            people on the other side of the bridge. No banks, no branches –
+            just direct, on-chain lending.
+          </p>
+        </div>
+
+        <div class="role-grid">
+          <article class="role-card">
+            <h3>What you can do as a lender</h3>
+            <ul class="role-list">
+              <li>Deposit money into the peer-to-peer lending pool.</li>
+              <li>
+                Earn variable yield as borrowers take loans from the pool.
+              </li>
+              <li>
+                Track your interest in real time, withdraw according to pool
+                liquidity.
+              </li>
+              <li>
+                Split funds between the main lending pool and the 3% save
+                account.
+              </li>
+            </ul>
+          </article>
+
+          <article class="role-card">
+            <h3>Your benefits as a lender</h3>
+            <ul class="role-list">
+              <li>People-focused: you are supporting borrowers, not banks.</li>
+              <li>
+                Non-custodial: funds stay in your wallet until you decide to
+                lend.
+              </li>
+              <li>
+                Transparent: see exactly how much is lent, borrowed and earned.
+              </li>
+              <li>
+                Flexible: move between lending, saving and withdrawing when it
+                fits your plan.
+              </li>
+            </ul>
+            <button class="btn btn-primary btn-full">
+              Become a lender (demo)
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BORROWING SECTION -->
+    <section id="borrowing" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Borrowing on AmicBridge</h2>
+          <p>
+            Use your crypto as collateral to borrow from people in the
+            AmicBridge community. Get fair, clear terms without traditional
+            banks in the middle.
+          </p>
+        </div>
+
+        <div class="role-grid">
+          <article class="role-card">
+            <h3>How borrowing works</h3>
+            <ul class="role-list">
+              <li>
+                Connect your wallet and lock approved assets as collateral.
+              </li>
+              <li>
+                Borrow against that collateral from the shared lending pool.
+              </li>
+              <li>
+                Make repayments on your own schedule within the loan terms.
+              </li>
+              <li>
+                Free up collateral again when your loan is paid back.
+              </li>
+            </ul>
+          </article>
+
+          <article class="role-card">
+            <h3>Why borrowers use the bridge</h3>
+            <ul class="role-list">
+              <li>No bank manager, no paperwork, no branch meetings.</li>
+              <li>
+                Clear interest and collateral rules visible in your dashboard.
+              </li>
+              <li>
+                Access liquidity without selling your long-term crypto holdings.
+              </li>
+              <li>
+                A community-driven platform built in Oslo, Norway.
+              </li>
+            </ul>
+            <button class="btn btn-secondary btn-full">
+              Apply to borrow (demo)
+            </button>
           </article>
         </div>
       </div>
@@ -430,8 +541,8 @@ const year = new Date().getFullYear();
           <div>
             <h4>Product</h4>
             <a href="#how-it-works">How it works</a>
-            <a href="#products">Products</a>
-            <a href="#security">Security</a>
+            <a href="#lending">Lending</a>
+            <a href="#borrowing">Borrowing</a>
           </div>
           <div>
             <h4>Company</h4>
@@ -468,6 +579,7 @@ const year = new Date().getFullYear();
       sans-serif;
     background: radial-gradient(circle at top left, #050816, #020617 45%, #000);
     color: #f9fafb;
+    scroll-behavior: smooth;
   }
 
   .page {
@@ -867,6 +979,40 @@ const year = new Date().getFullYear();
     font-size: 1rem;
   }
 
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+
+  .role-card {
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 1.2rem;
+    padding: 1.3rem 1.2rem 1.4rem;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    font-size: 0.9rem;
+  }
+
+  .role-card h3 {
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+  }
+
+  .role-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.4rem;
+    display: grid;
+    gap: 0.45rem;
+    color: #e5e7eb;
+  }
+
+  .role-list li::before {
+    content: "•";
+    margin-right: 0.4rem;
+    color: #38bdf8;
+  }
+
   .security-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -1149,7 +1295,8 @@ const year = new Date().getFullYear();
     .stats-grid,
     .security-grid,
     .grid-3,
-    .steps {
+    .steps,
+    .role-grid {
       grid-template-columns: minmax(0, 1fr);
     }
 
