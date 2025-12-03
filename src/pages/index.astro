@@ -152,10 +152,13 @@ const year = new Date().getFullYear();
           <p class="section-text">
             As a lender, you place money into AmicBridge. That money is used to fund
             loans for borrowers on the platform. You earn interest when those loans
-            are repaid.
+            are repaid. You can lend in <strong>normal currency (fiat)</strong>,
+            <strong>crypto</strong> (for example BTC or ETH), or <strong>stablecoins</strong>
+            such as USDC, USDT or EURC.
           </p>
 
           <ul class="bullet-list">
+            <li>Lend using fiat currency, crypto assets or stablecoins.</li>
             <li>Your money goes to people, not a bank balance sheet.</li>
             <li>You see expected return and risk information before lending.</li>
             <li>You may choose to split between lending and the 3% Save product.</li>
@@ -191,7 +194,8 @@ const year = new Date().getFullYear();
           <h3>Send a lender request</h3>
           <p class="form-text">
             Complete this form if you are interested in lending money through
-            AmicBridge. The information will be sent by e-mail to the team.
+            AmicBridge. You can lend fiat, crypto or stablecoins. The information
+            will be sent by e-mail to the team.
           </p>
 
           <form
@@ -218,11 +222,30 @@ const year = new Date().getFullYear();
             </label>
 
             <label class="field">
+              <span>What do you want to lend?</span>
+              <select name="Lend type" required>
+                <option value="">Choose option</option>
+                <option value="Fiat">Normal fiat currency</option>
+                <option value="Crypto">Crypto (BTC, ETH, etc.)</option>
+                <option value="Stablecoins">Stablecoins (USDC, USDT, EURC, etc.)</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Which currency or asset?</span>
+              <input
+                type="text"
+                name="Currency or asset"
+                placeholder="EUR, NOK, BTC, ETH, USDC, USDT, EURC, etc."
+              />
+            </label>
+
+            <label class="field">
               <span>Approximate amount you want to lend</span>
               <input
                 type="text"
                 name="Lend amount"
-                placeholder="For example: 2 000 EUR"
+                placeholder="For example: 2 000 EUR, 0.3 BTC, 5 000 USDC"
               />
             </label>
 
