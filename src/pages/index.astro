@@ -1,11 +1,10 @@
-
 ---
 import Layout from "../layouts/Layout.astro";
 
 const year = new Date().getFullYear();
 ---
 
-<Layout title="AmicBridge – Peer-to-Peer Crypto Lending & Borrowing">
+<Layout title="AmicBridge – People-to-People Lending & Borrowing">
   <main class="page">
     <header class="header">
       <div class="container header-inner">
@@ -18,8 +17,7 @@ const year = new Date().getFullYear();
           <a href="#how-it-works" class="nav-link">How it works</a>
           <a href="#lending" class="nav-link">Lending</a>
           <a href="#borrowing" class="nav-link">Borrowing</a>
-          <a href="#products" class="nav-link">Products</a>
-          <a href="#security" class="nav-link">Security</a>
+          <a href="#save" class="nav-link">3% Save</a>
           <a href="#company" class="nav-link">Company</a>
         </nav>
 
@@ -30,478 +28,226 @@ const year = new Date().getFullYear();
       </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1>
-            The people-powered bridge
-            between
-            <span class="accent">lenders</span>
-            and
-            <span class="accent">borrowers</span>.
-          </h1>
+          <h1>Trusted bridge between people who lend and people who borrow.</h1>
           <p class="hero-subtitle">
-            AmicBridge is a crypto platform where people lend and borrow from
-            each other – not from banks. Lenders earn yield, borrowers unlock
-            fair credit, and anyone can store money in a simple
-            <strong>3% save account</strong> backed by transparent smart
-            contracts.
+            AmicBridge is a simple, transparent platform where people can lend
+            money, borrow money and store money with a
+            <strong>3% yearly yield</strong> – without using a traditional bank.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary btn-lg" href="#lending">I want to lend</a>
-            <a class="btn btn-ghost btn-lg" href="#borrowing">I want to borrow</a>
+            <a class="btn btn-primary" href="#lending">I want to lend</a>
+            <a class="btn btn-secondary" href="#borrowing">I want to borrow</a>
           </div>
 
-          <div class="hero-trust">
-            <p class="hero-trust-label">A bridge built for people, not banks</p>
-            <div class="hero-badges">
-              <span class="badge">Peer-to-peer lending</span>
-              <span class="badge">3% save account</span>
-              <span class="badge">Non-custodial crypto</span>
-            </div>
-          </div>
+          <p class="hero-note">
+            Built in Oslo, Norway. Non-bank, people-to-people finance with clear,
+            simple terms.
+          </p>
         </div>
 
         <div class="hero-card">
-          <div class="hero-card-header">
-            <p>People-to-people lending snapshot</p>
-            <span class="status-pill">Demo view</span>
-          </div>
-
-          <div class="hero-metrics">
-            <div class="metric">
-              <span class="metric-label">Total money lent by people</span>
-              <span class="metric-value">$12.4M</span>
-              <span class="metric-change positive">+6.1% this month</span>
-            </div>
-            <div class="metric">
-              <span class="metric-label">Total loans to borrowers</span>
-              <span class="metric-value">$8.7M</span>
-              <span class="metric-change">70% utilization</span>
-            </div>
-          </div>
-
-          <div class="hero-table">
-            <div class="hero-table-head">
-              <span>Product</span>
-              <span>For</span>
-              <span>Rate</span>
-              <span>Type</span>
-            </div>
-            <div class="hero-row">
-              <span>P2P Lending Pool</span>
-              <span>Lenders</span>
-              <span>4.5%–8.0% APY</span>
-              <span>Variable</span>
-            </div>
-            <div class="hero-row">
-              <span>Borrower Credit Line</span>
-              <span>Borrowers</span>
-              <span>6.0%–12.0% APR</span>
-              <span>Variable</span>
-            </div>
-            <div class="hero-row">
-              <span>AmicBridge Save</span>
-              <span>Everyone</span>
-              <span>3% APY</span>
-              <span>Stable</span>
-            </div>
-          </div>
-
-          <button class="btn btn-secondary btn-full">
-            Connect wallet (demo)
-          </button>
-
-          <p class="hero-note">
-            Numbers shown are examples only. Actual yields and loan rates are
-            defined by on-chain supply, demand and protocol parameters.
-          </p>
+          <h2 class="hero-card-title">At a glance</h2>
+          <ul class="hero-list">
+            <li><strong>Peer-to-peer</strong> – your money goes to people, not a bank.</li>
+            <li><strong>3% Save account</strong> – store money and earn a stable yield.</li>
+            <li><strong>Transparent</strong> – clear interest rates and conditions.</li>
+            <li><strong>Crypto-based</strong> – access with your own wallet.</li>
+          </ul>
         </div>
       </div>
     </section>
 
+    <!-- HOW IT WORKS -->
     <section id="how-it-works" class="section">
       <div class="container">
-        <div class="section-heading">
-          <h2>How the AmicBridge works</h2>
-          <p>
-            AmicBridge is a bridge: on one side people who want to lend and
-            earn; on the other side people who need to borrow. Smart contracts
-            connect them directly so banks never sit in the middle.
-          </p>
+        <div class="section-header">
+          <h2>How AmicBridge works</h2>
+          <p>Three clear steps to start lending, borrowing or saving.</p>
         </div>
 
         <div class="steps">
-          <article class="step">
-            <div class="step-number">1</div>
-            <h3>Connect wallet & choose role</h3>
+          <div class="step">
+            <span class="step-number">1</span>
+            <h3>Create account & connect wallet</h3>
             <p>
-              Connect a crypto wallet and choose what you want to do:
-              <strong>lend money</strong>, <strong>borrow money</strong>, or
-              simply <strong>store and earn 3%</strong> in AmicBridge Save.
-            </p>
-          </article>
-
-          <article class="step">
-            <div class="step-number">2</div>
-            <h3>People fund the shared pool</h3>
-            <p>
-              Lenders deposit their money into a secure on-chain pool. That pool
-              is what borrowers draw from – it’s individuals helping individuals,
-              not deposits sitting in a bank.
-            </p>
-          </article>
-
-          <article class="step">
-            <div class="step-number">3</div>
-            <h3>Smart contracts handle the rules</h3>
-            <p>
-              Interest rates, repayments, and collateral rules are managed by
-              code. Everyone sees the same rules and the same data, always
-              visible on the blockchain.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- LENDING SECTION -->
-    <section id="lending" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Lending on AmicBridge</h2>
-          <p>
-            Become a lender and let your money work for you by helping real
-            people on the other side of the bridge. No banks, no branches –
-            just direct, on-chain lending.
-          </p>
-        </div>
-
-        <div class="role-grid">
-          <article class="role-card">
-            <h3>What you can do as a lender</h3>
-            <ul class="role-list">
-              <li>Deposit money into the peer-to-peer lending pool.</li>
-              <li>
-                Earn variable yield as borrowers take loans from the pool.
-              </li>
-              <li>
-                Track your interest in real time, withdraw according to pool
-                liquidity.
-              </li>
-              <li>
-                Split funds between the main lending pool and the 3% save
-                account.
-              </li>
-            </ul>
-          </article>
-
-          <article class="role-card">
-            <h3>Your benefits as a lender</h3>
-            <ul class="role-list">
-              <li>People-focused: you are supporting borrowers, not banks.</li>
-              <li>
-                Non-custodial: funds stay in your wallet until you decide to
-                lend.
-              </li>
-              <li>
-                Transparent: see exactly how much is lent, borrowed and earned.
-              </li>
-              <li>
-                Flexible: move between lending, saving and withdrawing when it
-                fits your plan.
-              </li>
-            </ul>
-            <button class="btn btn-primary btn-full">
-              Become a lender (demo)
-            </button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- BORROWING SECTION -->
-    <section id="borrowing" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Borrowing on AmicBridge</h2>
-          <p>
-            Use your crypto as collateral to borrow from people in the
-            AmicBridge community. Get fair, clear terms without traditional
-            banks in the middle.
-          </p>
-        </div>
-
-        <div class="role-grid">
-          <article class="role-card">
-            <h3>How borrowing works</h3>
-            <ul class="role-list">
-              <li>
-                Connect your wallet and lock approved assets as collateral.
-              </li>
-              <li>
-                Borrow against that collateral from the shared lending pool.
-              </li>
-              <li>
-                Make repayments on your own schedule within the loan terms.
-              </li>
-              <li>
-                Free up collateral again when your loan is paid back.
-              </li>
-            </ul>
-          </article>
-
-          <article class="role-card">
-            <h3>Why borrowers use the bridge</h3>
-            <ul class="role-list">
-              <li>No bank manager, no paperwork, no branch meetings.</li>
-              <li>
-                Clear interest and collateral rules visible in your dashboard.
-              </li>
-              <li>
-                Access liquidity without selling your long-term crypto holdings.
-              </li>
-              <li>
-                A community-driven platform built in Oslo, Norway.
-              </li>
-            </ul>
-            <button class="btn btn-secondary btn-full">
-              Apply to borrow (demo)
-            </button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="products" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Products for real people and real money</h2>
-          <p>
-            Lend to others, borrow for your needs, invest in the AmicBridge
-            ecosystem, or store your money for a simple 3% yield.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>Peer-to-peer Lending</h3>
-            <p>
-              Lend money directly to other people through the AmicBridge lending
-              pool. Your money helps fund real borrowers and you earn interest
-              paid from the borrowing side of the bridge.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Borrow without a bank</h3>
-            <p>
-              Use your crypto as collateral and access loans from other people
-              on the platform. No branch visits, no long forms – just clear
-              terms visible in your dashboard.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>AmicBridge Save – 3% APY</h3>
-            <p>
-              A simple place to store your money in crypto and earn a
-              <strong>3% annual yield</strong>. Funds are placed in a safer,
-              more conservative pool so you can focus on holding, not trading.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Invest in AmicBridge growth</h3>
-            <p>
-              Early supporters can allocate capital into dedicated AmicBridge
-              growth pools, helping expand the platform’s liquidity and earning
-              a share of platform fees as yield.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Multi-asset support</h3>
-            <p>
-              Start with major assets such as stablecoins and blue-chip crypto.
-              Over time new assets can be added through transparent governance.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Clear reporting</h3>
-            <p>
-              Track how much you have lent, how much you have borrowed, and what
-              you earn from AmicBridge Save – all from a single, clean
-              interface.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="security" class="section">
-      <div class="container security-grid">
-        <div>
-          <div class="section-heading">
-            <h2>Security and risk protection</h2>
-            <p>
-              A bridge for money must be safe. AmicBridge is built with a
-              non-custodial, security-first architecture so that people can lend
-              and borrow with confidence.
+              Sign up, connect your crypto wallet and confirm your profile.
+              You stay in control of your money at all times.
             </p>
           </div>
 
-          <ul class="security-list">
-            <li>
-              Smart contracts to be professionally audited before full mainnet
-              launch.
-            </li>
-            <li>
-              Non-custodial by design – users keep control of their wallets and
-              funds until they interact with the protocol.
-            </li>
-            <li>
-              Transparent interest curves and collateral rules, visible and
-              verifiable on-chain.
-            </li>
-            <li>
-              Real-time monitoring for loan health and collateral safety.
-            </li>
+          <div class="step">
+            <span class="step-number">2</span>
+            <h3>Choose lending, borrowing or 3% saving</h3>
+            <p>
+              Decide if you want to lend money to others, borrow money against
+              your crypto or simply store money in the AmicBridge Save account.
+            </p>
+          </div>
+
+          <div class="step">
+            <span class="step-number">3</span>
+            <h3>Let the bridge handle the details</h3>
+            <p>
+              AmicBridge matches lenders and borrowers and calculates interest.
+              You see a clear overview of your money at all times.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LENDING -->
+    <section id="lending" class="section section-muted">
+      <div class="container two-column">
+        <div>
+          <h2>Lend money to people and earn interest</h2>
+          <p class="section-text">
+            As a lender, you place money into the AmicBridge lending pool.
+            That pool is used to fund loans for borrowers on the platform.
+            You earn interest from the loans that are paid back.
+          </p>
+
+          <ul class="bullet-list">
+            <li>Your money goes directly to other people, not a bank.</li>
+            <li>See an expected interest rate before you lend.</li>
+            <li>Withdraw according to pool rules and available liquidity.</li>
           </ul>
+
+          <button class="btn btn-primary">Become a lender (demo)</button>
         </div>
 
-        <div class="security-card">
-          <h3>Built around people, not institutions</h3>
-          <p>
-            AmicBridge is not a traditional bank. It is a crypto marketplace
-            where people meet each other financially through code. Compliance,
-            transparency and clear risk messaging are key priorities as the
-            platform grows.
+        <div class="info-card">
+          <h3>Lending overview</h3>
+          <dl class="info-list">
+            <div>
+              <dt>Expected annual return</dt>
+              <dd>Variable, for example 4–7%*</dd>
+            </div>
+            <div>
+              <dt>Minimum amount</dt>
+              <dd>Designed for normal people, not only institutions</dd>
+            </div>
+            <div>
+              <dt>Risk</dt>
+              <dd>Loans can default. Returns are not guaranteed.</dd>
+            </div>
+          </dl>
+          <p class="small-note">
+            *Numbers are examples only and will change over time.
           </p>
-          <div class="security-tags">
-            <span class="badge">Non-custodial</span>
-            <span class="badge">On-chain rules</span>
-            <span class="badge">Open data</span>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container stats-grid">
+    <!-- BORROWING -->
+    <section id="borrowing" class="section">
+      <div class="container two-column">
         <div>
-          <div class="section-heading">
-            <h2>A long-term bridge for savings and credit</h2>
-            <p>
-              AmicBridge is designed so that everyday people, long-term
-              investors and crypto natives can all meet on the same platform
-              with different needs but shared tools.
-            </p>
-          </div>
+          <h2>Borrow money without going to a bank</h2>
+          <p class="section-text">
+            As a borrower, you receive money from the lending pool that many
+            people have funded together. You agree to a clear interest rate and
+            repayment plan, without traditional bank processes.
+          </p>
 
-          <div class="stats">
-            <div class="stat">
-              <span class="stat-label">Core use cases</span>
-              <span class="stat-value">
-                Lending, borrowing, 3% saving, growth investing
-              </span>
-            </div>
-            <div class="stat">
-              <span class="stat-label">Who it’s for</span>
-              <span class="stat-value">
-                Individuals, communities, small businesses and crypto investors
-              </span>
-            </div>
-            <div class="stat">
-              <span class="stat-label">Headquarters</span>
-              <span class="stat-value">Oslo, Norway</span>
-            </div>
-          </div>
+          <ul class="bullet-list">
+            <li>Use your crypto as security (collateral).</li>
+            <li>Clear overview of how much you owe and when.</li>
+            <li>No physical branch, everything is online and transparent.</li>
+          </ul>
+
+          <button class="btn btn-secondary">Apply to borrow (demo)</button>
         </div>
 
-        <aside class="quote-card">
-          <p class="quote-text">
-            “Money should be able to move directly between people who trust the
-            same rules – without needing a bank in the middle. AmicBridge is
-            built to be that bridge.”
+        <div class="info-card">
+          <h3>Borrowing overview</h3>
+          <dl class="info-list">
+            <div>
+              <dt>Typical annual interest</dt>
+              <dd>Variable, based on market demand</dd>
+            </div>
+            <div>
+              <dt>Security</dt>
+              <dd>Loans are backed by crypto collateral.</dd>
+            </div>
+            <div>
+              <dt>Transparency</dt>
+              <dd>You see total cost before you accept any loan.</dd>
+            </div>
+          </dl>
+          <p class="small-note">
+            Borrowing in crypto is risky and values can move quickly. Only
+            borrow what you can pay back.
           </p>
-          <p class="quote-author">— Robert Amic Olsen, CEO of AmicBridge</p>
-        </aside>
-      </div>
-    </section>
-
-    <section id="faq" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Frequently asked questions</h2>
-          <p>
-            Key answers about what AmicBridge is – and what it is not – before
-            you decide to lend, borrow or save.
-          </p>
-        </div>
-
-        <div class="faq">
-          <details class="faq-item" open>
-            <summary>Is AmicBridge a bank?</summary>
-            <p>
-              No. AmicBridge is not a bank and does not hold deposits in the
-              traditional banking sense. It is a crypto platform that uses smart
-              contracts to connect people who want to lend, borrow or save in
-              a non-custodial way.
-            </p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Who provides the money for loans?</summary>
-            <p>
-              All loan liquidity comes from people who choose to lend through
-              AmicBridge. When you borrow, you are borrowing from a shared pool
-              funded by many individual lenders – not from a bank balance
-              sheet.
-            </p>
-          </details>
-
-          <details class="faq-item">
-            <summary>How does the 3% AmicBridge Save yield work?</summary>
-            <p>
-              AmicBridge Save is designed as a more stable, conservative pool
-              with a target annual yield of 3%. Returns are generated from
-              participation in the wider lending ecosystem and platform fees.
-              As with all crypto products, yields are not guaranteed and carry
-              risk.
-            </p>
-          </details>
-
-          <details class="faq-item">
-            <summary>How can I invest in AmicBridge?</summary>
-            <p>
-              You can participate by lending into the pools, using the platform
-              as a borrower, and in the future by allocating capital to
-              dedicated growth products designed to share platform revenue with
-              long-term supporters.
-            </p>
-          </details>
         </div>
       </div>
     </section>
 
-    <section id="company" class="cta">
-      <div class="container cta-inner">
+    <!-- SAVE 3% -->
+    <section id="save" class="section section-muted">
+      <div class="container two-column">
         <div>
-          <h2>Contact AmicBridge</h2>
-          <p>
-            AmicBridge is built in Oslo, Norway, with a mission to become the
-            trusted bridge where people lend, borrow and save money together in
-            crypto.
+          <h2>Store your money and earn 3% per year</h2>
+          <p class="section-text">
+            AmicBridge Save is a simple product for people who want to hold
+            money in crypto and earn a stable target yield of
+            <strong>3% per year</strong>.
           </p>
-          <div class="contact-block">
-            <p><strong>Company</strong>: AmicBridge</p>
-            <p><strong>CEO</strong>: Robert Amic Olsen</p>
-            <p><strong>Location</strong>: Oslo, Norway</p>
+
+          <ul class="bullet-list">
+            <li>Easy to understand: one account, one rate.</li>
+            <li>You can move money in and out, subject to platform rules.</li>
+            <li>Designed for stability, not speculation.</li>
+          </ul>
+
+          <button class="btn btn-primary">Open 3% Save (demo)</button>
+        </div>
+
+        <div class="info-card">
+          <h3>Save account overview</h3>
+          <dl class="info-list">
+            <div>
+              <dt>Target yield</dt>
+              <dd>3% per year (not guaranteed)</dd>
+            </div>
+            <div>
+              <dt>Who it is for</dt>
+              <dd>People who want a simple place to store money in crypto.</dd>
+            </div>
+            <div>
+              <dt>Risk</dt>
+              <dd>
+                All crypto products carry risk, including possible loss of
+                capital.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPANY / CONTACT -->
+    <section id="company" class="section">
+      <div class="container company">
+        <div>
+          <h2>About AmicBridge</h2>
+          <p class="section-text">
+            AmicBridge is a company focused on making lending, borrowing and
+            saving between people simple and transparent, using modern crypto
+            technology. The platform is built and led from Oslo, Norway.
+          </p>
+
+          <div class="contact-box">
+            <p><strong>Company:</strong> AmicBridge</p>
+            <p><strong>CEO:</strong> Robert Amic Olsen</p>
+            <p><strong>Location:</strong> Oslo, Norway</p>
             <p>
-              <strong>Email</strong>:
+              <strong>Email:</strong>
               <a href="mailto:robertamicolsen@gmail.com">
                 robertamicolsen@gmail.com
               </a>
@@ -509,64 +255,26 @@ const year = new Date().getFullYear();
           </div>
         </div>
 
-        <form class="cta-form" on:submit|preventDefault>
-          <input
-            type="email"
-            name="email"
-            placeholder="Your e-mail for updates"
-            class="input"
-            required
-          />
-          <button type="submit" class="btn btn-primary btn-lg">
-            Join AmicBridge updates
-          </button>
-        </form>
+        <div class="company-note">
+          <h3>Important information</h3>
+          <p>
+            AmicBridge is not a traditional bank and does not offer government
+            guaranteed deposits. All products involve risk, and returns are
+            not guaranteed. This website is informational and is not financial
+            advice.
+          </p>
+        </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-inner">
-        <div class="footer-brand">
-          <div class="logo">
-            <span class="logo-mark">AB</span>
-            <span class="logo-text">AmicBridge</span>
-          </div>
-          <p>
-            A people-first bridge for lending, borrowing and saving money in
-            crypto – without banks.
-          </p>
-        </div>
-
-        <div class="footer-links">
-          <div>
-            <h4>Product</h4>
-            <a href="#how-it-works">How it works</a>
-            <a href="#lending">Lending</a>
-            <a href="#borrowing">Borrowing</a>
-          </div>
-          <div>
-            <h4>Company</h4>
-            <a href="#company">Contact</a>
-            <a href="#faq">FAQ</a>
-          </div>
-          <div>
-            <h4>Legal</h4>
-            <a href="#">Terms</a>
-            <a href="#">Privacy</a>
-            <a href="#">Risk disclosure</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="container footer-bottom-inner">
-          <p>© {year} AmicBridge. All rights reserved.</p>
-          <p class="footer-note">
-            Crypto assets are volatile and involve risk, including possible loss
-            of principal. This site is for informational purposes only and does
-            not constitute financial, legal or tax advice.
-          </p>
-        </div>
+        <p>© {year} AmicBridge. All rights reserved.</p>
+        <p class="footer-note">
+          Crypto and peer-to-peer lending are high-risk activities. Consider
+          your situation carefully and consult a professional adviser if needed.
+        </p>
       </div>
     </footer>
   </main>
@@ -577,8 +285,8 @@ const year = new Date().getFullYear();
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       sans-serif;
-    background: radial-gradient(circle at top left, #050816, #020617 45%, #000);
-    color: #f9fafb;
+    background: #f3f4f6;
+    color: #111827;
     scroll-behavior: smooth;
   }
 
@@ -587,25 +295,26 @@ const year = new Date().getFullYear();
   }
 
   .container {
-    max-width: 1120px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
+
+  /* HEADER */
 
   .header {
     position: sticky;
     top: 0;
     z-index: 40;
-    backdrop-filter: blur(24px);
-    background: radial-gradient(circle at top left, #020617e6, #020617e6);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.9rem 0;
+    padding: 0.75rem 0;
     gap: 1rem;
   }
 
@@ -614,26 +323,18 @@ const year = new Date().getFullYear();
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
   }
 
   .logo-mark {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 999px;
-    background: conic-gradient(
-      from 160deg,
-      #38bdf8,
-      #a855f7,
-      #f97316,
-      #38bdf8
-    );
-    display: inline-flex;
+    background: #111827;
+    color: #f9fafb;
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
-    color: #020617;
-    font-weight: 800;
+    font-size: 0.7rem;
   }
 
   .logo-text {
@@ -643,132 +344,90 @@ const year = new Date().getFullYear();
   .nav {
     display: flex;
     gap: 1.25rem;
-    align-items: center;
     font-size: 0.9rem;
   }
 
   .nav-link {
-    color: #cbd5f5;
+    color: #4b5563;
     text-decoration: none;
-    position: relative;
-    padding-bottom: 0.1rem;
   }
 
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.25rem;
-    width: 0;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #38bdf8, #a855f7);
-    transition: width 0.2s ease-out;
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
+  .nav-link:hover {
+    color: #111827;
   }
 
   .header-actions {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     border-radius: 999px;
     border: 1px solid transparent;
     padding: 0.45rem 1rem;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
-    transition: background 0.18s ease, border-color 0.18s ease,
-      transform 0.1s ease, box-shadow 0.18s ease, color 0.18s ease;
-    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #38bdf8, #a855f7);
-    color: #020617;
-    box-shadow: 0 14px 30px rgba(56, 189, 248, 0.35);
+    background: #111827;
+    color: #f9fafb;
   }
 
   .btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.45);
+    background: #020617;
   }
 
   .btn-secondary {
-    background: rgba(15, 23, 42, 0.9);
-    color: #e5e7eb;
-    border-color: rgba(148, 163, 184, 0.4);
+    background: #e5e7eb;
+    color: #111827;
+    border-color: #d1d5db;
   }
 
   .btn-secondary:hover {
-    background: rgba(15, 23, 42, 1);
-    border-color: rgba(148, 163, 184, 0.9);
+    background: #d1d5db;
   }
 
   .btn-ghost {
     background: transparent;
-    color: #e5e7eb;
-    border-color: rgba(148, 163, 184, 0.3);
+    color: #111827;
+    border-color: #d1d5db;
   }
 
   .btn-ghost:hover {
-    background: rgba(15, 23, 42, 0.8);
+    background: #f3f4f6;
   }
 
-  .btn-lg {
-    padding: 0.7rem 1.4rem;
-    font-size: 0.95rem;
-  }
-
-  .btn-full {
-    width: 100%;
-    margin-top: 0.75rem;
-  }
+  /* HERO */
 
   .hero {
-    padding: 4.5rem 0 3rem;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 3rem 0 2.5rem;
   }
 
   .hero-inner {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    gap: 2.75rem;
-    align-items: center;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: flex-start;
   }
 
   .hero-copy h1 {
-    font-size: 2.5rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 900px) {
-    .hero-copy h1 {
-      font-size: 3.15rem;
-    }
-  }
-
-  .accent {
-    background: linear-gradient(120deg, #38bdf8, #a855f7, #f97316);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
   }
 
   .hero-subtitle {
-    color: #cbd5f5;
-    max-width: 34rem;
     font-size: 0.98rem;
-    line-height: 1.6;
+    color: #4b5563;
+    max-width: 32rem;
   }
 
   .hero-subtitle strong {
@@ -776,502 +435,235 @@ const year = new Date().getFullYear();
   }
 
   .hero-actions {
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
     display: flex;
+    gap: 0.75rem;
     flex-wrap: wrap;
-    gap: 0.9rem;
-  }
-
-  .hero-trust {
-    margin-top: 1.8rem;
-  }
-
-  .hero-trust-label {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #9ca3af;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .badge {
-    font-size: 0.75rem;
-    border-radius: 999px;
-    padding: 0.25rem 0.75rem;
-    border: 1px solid rgba(148, 163, 184, 0.5);
-    background: rgba(15, 23, 42, 0.8);
-  }
-
-  .hero-card {
-    background: radial-gradient(circle at top left, #111827, #020617 75%);
-    border-radius: 1.5rem;
-    border: 1px solid rgba(148, 163, 184, 0.45);
-    padding: 1.4rem 1.4rem 1.3rem;
-    box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
-  }
-
-  .hero-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: #e5e7eb;
-    margin-bottom: 1rem;
-  }
-
-  .status-pill {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
-    border: 1px solid rgba(52, 211, 153, 0.5);
-    color: #bbf7d0;
-    background: rgba(22, 163, 74, 0.15);
-  }
-
-  .hero-metrics {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.1rem;
-  }
-
-  .metric-label {
-    font-size: 0.75rem;
-    color: #9ca3af;
-  }
-
-  .metric-value {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-top: 0.15rem;
-  }
-
-  .metric-change {
-    display: block;
-    margin-top: 0.1rem;
-    font-size: 0.75rem;
-    color: #9ca3af;
-  }
-
-  .metric-change.positive {
-    color: #4ade80;
-  }
-
-  .hero-table {
-    font-size: 0.8rem;
-    border-radius: 0.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    overflow: hidden;
-    margin-top: 0.3rem;
-  }
-
-  .hero-table-head,
-  .hero-row {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    padding: 0.45rem 0.7rem;
-    align-items: center;
-  }
-
-  .hero-table-head {
-    background: rgba(15, 23, 42, 0.9);
-    font-weight: 500;
-    color: #e5e7eb;
-  }
-
-  .hero-row:nth-child(odd) {
-    background: rgba(15, 23, 42, 0.7);
-  }
-
-  .hero-row:nth-child(even) {
-    background: rgba(15, 23, 42, 0.45);
   }
 
   .hero-note {
-    margin-top: 0.65rem;
-    font-size: 0.7rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
+
+  .hero-card {
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1.25rem;
+  }
+
+  .hero-card-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.92rem;
+    color: #374151;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .hero-list li::before {
+    content: "•";
+    margin-right: 0.4rem;
     color: #9ca3af;
   }
 
+  /* GENERAL SECTIONS */
+
   .section {
-    padding: 3.5rem 0;
+    padding: 2.75rem 0;
   }
 
-  .section-alt {
-    background: radial-gradient(circle at top, #020617, #010313 60%, #000);
+  .section-muted {
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
   }
 
-  .section-heading {
-    max-width: 36rem;
-    margin-bottom: 2rem;
+  .section-header {
+    margin-bottom: 1.75rem;
   }
 
-  .section-heading h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+  .section-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
   }
 
-  .section-heading p {
-    color: #cbd5f5;
+  .section-header p {
     font-size: 0.95rem;
+    color: #4b5563;
   }
+
+  .section-text {
+    font-size: 0.96rem;
+    color: #374151;
+    margin-bottom: 0.75rem;
+  }
+
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    font-size: 0.94rem;
+    color: #374151;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .bullet-list li::before {
+    content: "•";
+    margin-right: 0.4rem;
+    color: #9ca3af;
+  }
+
+  .two-column {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  /* HOW IT WORKS */
 
   .steps {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.75rem;
+    gap: 1.5rem;
   }
 
   .step {
-    background: rgba(15, 23, 42, 0.8);
-    border-radius: 1.1rem;
-    padding: 1.3rem 1.2rem 1.3rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1rem;
+    font-size: 0.94rem;
   }
 
   .step-number {
-    width: 30px;
-    height: 30px;
-    border-radius: 999px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at top left, #38bdf8, #a855f7);
-    color: #020617;
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    font-size: 0.9rem;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: #111827;
+    color: #f9fafb;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
   }
 
   .step h3 {
-    margin-bottom: 0.4rem;
-    font-size: 1.02rem;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
   }
 
   .step p {
-    font-size: 0.9rem;
-    color: #e5e7eb;
+    color: #4b5563;
   }
 
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.4rem;
+  /* INFO CARDS */
+
+  .info-card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1rem 1.2rem;
+    font-size: 0.92rem;
   }
 
-  .card {
-    background: rgba(15, 23, 42, 0.82);
-    border-radius: 1.1rem;
-    padding: 1.2rem 1.2rem 1.3rem;
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    font-size: 0.9rem;
-  }
-
-  .card h3 {
-    margin-bottom: 0.4rem;
+  .info-card h3 {
+    margin-bottom: 0.5rem;
     font-size: 1rem;
   }
 
-  .role-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.6rem;
-  }
-
-  .role-card {
-    background: rgba(15, 23, 42, 0.9);
-    border-radius: 1.2rem;
-    padding: 1.3rem 1.2rem 1.4rem;
-    border: 1px solid rgba(148, 163, 184, 0.45);
-    font-size: 0.9rem;
-  }
-
-  .role-card h3 {
-    margin-bottom: 0.6rem;
-    font-size: 1.05rem;
-  }
-
-  .role-list {
-    list-style: none;
+  .info-list {
+    margin: 0;
     padding: 0;
-    margin: 0 0 0.4rem;
-    display: grid;
-    gap: 0.45rem;
-    color: #e5e7eb;
   }
 
-  .role-list li::before {
-    content: "•";
-    margin-right: 0.4rem;
-    color: #38bdf8;
+  .info-list div {
+    margin-bottom: 0.5rem;
   }
 
-  .security-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: 2.5rem;
-    align-items: flex-start;
-  }
-
-  .security-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-    display: grid;
-    gap: 0.6rem;
-    font-size: 0.95rem;
-    color: #e5e7eb;
-  }
-
-  .security-list li::before {
-    content: "◆";
-    margin-right: 0.4rem;
-    font-size: 0.6rem;
-    color: #38bdf8;
-  }
-
-  .security-card {
-    background: radial-gradient(circle at top left, #111827, #020617);
-    border-radius: 1.3rem;
-    padding: 1.5rem 1.4rem 1.6rem;
-    border: 1px solid rgba(56, 189, 248, 0.5);
-  }
-
-  .security-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1.1rem;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: 2.5rem;
-    align-items: stretch;
-  }
-
-  .stats {
-    display: grid;
-    gap: 0.9rem;
-    margin-top: 0.8rem;
-  }
-
-  .stat {
-    padding: 0.7rem 0.9rem;
-    border-radius: 0.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    background: rgba(15, 23, 42, 0.8);
-  }
-
-  .stat-label {
-    display: block;
-    font-size: 0.78rem;
-    color: #9ca3af;
+  .info-list dt {
+    font-size: 0.84rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.25rem;
-  }
-
-  .stat-value {
-    font-size: 0.98rem;
-  }
-
-  .quote-card {
-    padding: 1.4rem 1.4rem 1.5rem;
-    border-radius: 1.3rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    background: radial-gradient(circle at top, #020617, #020617 70%, #000);
-    position: relative;
-    font-size: 0.95rem;
-  }
-
-  .quote-text {
-    margin-bottom: 0.7rem;
-  }
-
-  .quote-card::before {
-    content: "“";
-    position: absolute;
-    font-size: 3.5rem;
-    top: -1.5rem;
-    left: 0.5rem;
-    color: rgba(148, 163, 184, 0.3);
-  }
-
-  .quote-author {
-    font-size: 0.85rem;
-    color: #9ca3af;
-  }
-
-  .faq {
-    display: grid;
-    gap: 0.8rem;
-  }
-
-  .faq-item {
-    background: rgba(15, 23, 42, 0.9);
-    border-radius: 0.9rem;
-    padding: 0.75rem 0.95rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-  }
-
-  .faq-item summary {
-    list-style: none;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 500;
-  }
-
-  .faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .faq-item summary::after {
-    content: "+";
-    float: right;
-    font-weight: 700;
-    transition: transform 0.15s ease;
-  }
-
-  .faq-item[open] summary::after {
-    transform: rotate(45deg);
-  }
-
-  .faq-item p {
-    margin-top: 0.4rem;
-    font-size: 0.9rem;
-    color: #e5e7eb;
-  }
-
-  .cta {
-    padding: 3.2rem 0 3.5rem;
-  }
-
-  .cta-inner {
-    border-radius: 1.5rem;
-    padding: 1.8rem 1.6rem;
-    background: linear-gradient(135deg, #0f172a, #020617);
-    border: 1px solid rgba(56, 189, 248, 0.5);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .cta-inner h2 {
-    margin-bottom: 0.3rem;
-  }
-
-  .cta-inner p {
-    font-size: 0.92rem;
-    color: #cbd5f5;
-    max-width: 24rem;
-  }
-
-  .contact-block {
-    margin-top: 0.9rem;
-    font-size: 0.9rem;
-    color: #e5e7eb;
-  }
-
-  .contact-block a {
-    color: #38bdf8;
-    text-decoration: none;
-  }
-
-  .contact-block a:hover {
-    text-decoration: underline;
-  }
-
-  .cta-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-    align-items: center;
-  }
-
-  .input {
-    min-width: 230px;
-    border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.6);
-    background: rgba(15, 23, 42, 0.9);
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-    color: #f9fafb;
-    outline: none;
-  }
-
-  .input::placeholder {
+    letter-spacing: 0.06em;
     color: #6b7280;
   }
 
-  .input:focus {
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+  .info-list dd {
+    margin: 0.1rem 0 0;
+    color: #111827;
   }
 
+  .small-note {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+
+  /* COMPANY */
+
+  .company {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .contact-box {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-size: 0.93rem;
+  }
+
+  .contact-box a {
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .contact-box a:hover {
+    text-decoration: underline;
+  }
+
+  .company-note {
+    font-size: 0.92rem;
+    color: #4b5563;
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1rem 1.2rem;
+  }
+
+  .company-note h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* FOOTER */
+
   .footer {
-    padding-top: 2.5rem;
-    border-top: 1px solid rgba(148, 163, 184, 0.35);
-    background: radial-gradient(circle at top, #020617, #000 70%);
+    border-top: 1px solid #e5e7eb;
+    background: #ffffff;
+    padding: 1.25rem 0 1.75rem;
   }
 
   .footer-inner {
     display: flex;
-    justify-content: space-between;
-    gap: 2.5rem;
-    padding-bottom: 2rem;
-  }
-
-  .footer-brand p {
-    font-size: 0.9rem;
-    color: #9ca3af;
-    max-width: 18rem;
-    margin-top: 0.4rem;
-  }
-
-  .footer-links {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 2.5rem;
-    font-size: 0.85rem;
-  }
-
-  .footer-links h4 {
-    margin-bottom: 0.45rem;
-    font-size: 0.9rem;
-  }
-
-  .footer-links a {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: #9ca3af;
-    text-decoration: none;
-  }
-
-  .footer-links a:hover {
-    color: #e5e7eb;
-  }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(31, 41, 55, 0.9);
-    padding: 0.9rem 0 1.4rem;
-  }
-
-  .footer-bottom-inner {
-    display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #6b7280;
   }
 
@@ -1279,61 +671,27 @@ const year = new Date().getFullYear();
     max-width: 40rem;
   }
 
-  @media (max-width: 900px) {
-    .hero-inner {
-      grid-template-columns: minmax(0, 1fr);
-    }
+  /* RESPONSIVE */
 
-    .hero-card {
-      order: -1;
+  @media (max-width: 900px) {
+    .hero-inner,
+    .two-column,
+    .company {
+      grid-template-columns: minmax(0, 1fr);
     }
 
     .nav {
       display: none;
     }
-
-    .stats-grid,
-    .security-grid,
-    .grid-3,
-    .steps,
-    .role-grid {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .footer-inner {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .footer-links {
-      grid-auto-flow: row;
-    }
   }
 
   @media (max-width: 640px) {
-    .header-inner {
-      justify-content: space-between;
-    }
-
     .hero {
-      padding-top: 3.2rem;
+      padding-top: 2.25rem;
     }
 
-    .cta-inner {
-      padding: 1.4rem 1.2rem;
-    }
-
-    .cta-form {
-      width: 100%;
-    }
-
-    .input {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .hero-card {
-      padding: 1.1rem 1.1rem 1.2rem;
+    .steps {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 </style>
