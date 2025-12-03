@@ -1,8 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const year = new Date().getFullYear();
 ---
 
-<Layout title="AmicBridge – Crypto Lending & Borrowing Platform">
+<Layout title="AmicBridge – Peer-to-Peer Crypto Lending & Borrowing">
   <main class="page">
     <header class="header">
       <div class="container header-inner">
@@ -13,9 +15,9 @@ import Layout from "../layouts/Layout.astro";
 
         <nav class="nav">
           <a href="#how-it-works" class="nav-link">How it works</a>
-          <a href="#features" class="nav-link">Features</a>
+          <a href="#products" class="nav-link">Products</a>
           <a href="#security" class="nav-link">Security</a>
-          <a href="#faq" class="nav-link">FAQ</a>
+          <a href="#company" class="nav-link">Company</a>
         </nav>
 
         <div class="header-actions">
@@ -29,76 +31,78 @@ import Layout from "../layouts/Layout.astro";
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1>
-            The bridge between
+            The people-powered bridge
+            between
             <span class="accent">lenders</span>
             and
-            <span class="accent">borrowers</span>
-            in crypto.
+            <span class="accent">borrowers</span>.
           </h1>
           <p class="hero-subtitle">
-            AmicBridge is a non-custodial crypto lending and borrowing platform.
-            Lenders earn yield. Borrowers unlock liquidity.
-            Transparent smart contracts connect both sides – no banks, no middlemen, just code you can verify.
+            AmicBridge is a crypto platform where people lend and borrow from
+            each other – not from banks. Lenders earn yield, borrowers unlock
+            fair credit, and anyone can store money in a simple
+            <strong>3% save account</strong> backed by transparent smart
+            contracts.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary btn-lg" href="#">Get early access</a>
-            <a class="btn btn-ghost btn-lg" href="#how-it-works">View how it works</a>
+            <a class="btn btn-primary btn-lg" href="#">Start lending</a>
+            <a class="btn btn-ghost btn-lg" href="#how-it-works">See how it works</a>
           </div>
 
           <div class="hero-trust">
-            <p class="hero-trust-label">Backed by on-chain transparency</p>
+            <p class="hero-trust-label">A bridge built for people, not banks</p>
             <div class="hero-badges">
-              <span class="badge">Non-custodial</span>
-              <span class="badge">Smart-contract powered</span>
-              <span class="badge">Audited protocols</span>
+              <span class="badge">Peer-to-peer lending</span>
+              <span class="badge">3% save account</span>
+              <span class="badge">Non-custodial crypto</span>
             </div>
           </div>
         </div>
 
         <div class="hero-card">
           <div class="hero-card-header">
-            <p>Lending overview</p>
-            <span class="status-pill">Live demo</span>
+            <p>People-to-people lending snapshot</p>
+            <span class="status-pill">Demo view</span>
           </div>
 
           <div class="hero-metrics">
             <div class="metric">
-              <span class="metric-label">Total supplied</span>
-              <span class="metric-value">$24.6M</span>
-              <span class="metric-change positive">+8.2% this month</span>
+              <span class="metric-label">Total money lent by people</span>
+              <span class="metric-value">$12.4M</span>
+              <span class="metric-change positive">+6.1% this month</span>
             </div>
             <div class="metric">
-              <span class="metric-label">Total borrowed</span>
-              <span class="metric-value">$17.3M</span>
-              <span class="metric-change">71% utilization</span>
+              <span class="metric-label">Total loans to borrowers</span>
+              <span class="metric-value">$8.7M</span>
+              <span class="metric-change">70% utilization</span>
             </div>
           </div>
 
           <div class="hero-table">
             <div class="hero-table-head">
-              <span>Asset</span>
-              <span>Deposit APY</span>
-              <span>Borrow APR</span>
-              <span>Collateral</span>
+              <span>Product</span>
+              <span>For</span>
+              <span>Rate</span>
+              <span>Type</span>
             </div>
             <div class="hero-row">
-              <span>USDC</span>
-              <span>4.8%</span>
-              <span>7.2%</span>
-              <span>Yes</span>
+              <span>P2P Lending Pool</span>
+              <span>Lenders</span>
+              <span>4.5%–8.0% APY</span>
+              <span>Variable</span>
             </div>
             <div class="hero-row">
-              <span>ETH</span>
-              <span>3.3%</span>
-              <span>6.4%</span>
-              <span>Yes</span>
+              <span>Borrower Credit Line</span>
+              <span>Borrowers</span>
+              <span>6.0%–12.0% APR</span>
+              <span>Variable</span>
             </div>
             <div class="hero-row">
-              <span>wBTC</span>
-              <span>2.9%</span>
-              <span>5.9%</span>
-              <span>Yes</span>
+              <span>AmicBridge Save</span>
+              <span>Everyone</span>
+              <span>3% APY</span>
+              <span>Stable</span>
             </div>
           </div>
 
@@ -107,8 +111,8 @@ import Layout from "../layouts/Layout.astro";
           </button>
 
           <p class="hero-note">
-            Rates are illustrative. Actual yields and APRs are determined by
-            protocol utilization and on-chain market conditions.
+            Numbers shown are examples only. Actual yields and loan rates are
+            defined by on-chain supply, demand and protocol parameters.
           </p>
         </div>
       </div>
@@ -117,101 +121,109 @@ import Layout from "../layouts/Layout.astro";
     <section id="how-it-works" class="section">
       <div class="container">
         <div class="section-heading">
-          <h2>How AmicBridge works</h2>
+          <h2>How the AmicBridge works</h2>
           <p>
-            One shared liquidity pool. Lenders and borrowers meet through
-            audited smart contracts that set rates algorithmically.
+            AmicBridge is a bridge: on one side people who want to lend and
+            earn; on the other side people who need to borrow. Smart contracts
+            connect them directly so banks never sit in the middle.
           </p>
         </div>
 
         <div class="steps">
           <article class="step">
             <div class="step-number">1</div>
-            <h3>Connect your wallet</h3>
+            <h3>Connect wallet & choose role</h3>
             <p>
-              Use MetaMask, WalletConnect or a supported hardware wallet to
-              connect in seconds. You stay in control of your keys at all times.
+              Connect a crypto wallet and choose what you want to do:
+              <strong>lend money</strong>, <strong>borrow money</strong>, or
+              simply <strong>store and earn 3%</strong> in AmicBridge Save.
             </p>
           </article>
 
           <article class="step">
             <div class="step-number">2</div>
-            <h3>Supply or borrow crypto</h3>
+            <h3>People fund the shared pool</h3>
             <p>
-              Lenders supply assets to earn yield. Borrowers lock collateral to
-              access instant liquidity without selling their long-term holdings.
+              Lenders deposit their money into a secure on-chain pool. That pool
+              is what borrowers draw from – it’s individuals helping individuals,
+              not deposits sitting in a bank.
             </p>
           </article>
 
           <article class="step">
             <div class="step-number">3</div>
-            <h3>The bridge does the rest</h3>
+            <h3>Smart contracts handle the rules</h3>
             <p>
-              Smart contracts match capital flows, calculate interest, and
-              manage collateral. Clear dashboards keep everything visible in
-              real time.
+              Interest rates, repayments, and collateral rules are managed by
+              code. Everyone sees the same rules and the same data, always
+              visible on the blockchain.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section section-alt">
+    <section id="products" class="section section-alt">
       <div class="container">
         <div class="section-heading">
-          <h2>Built for serious lenders and borrowers</h2>
+          <h2>Products for real people and real money</h2>
           <p>
-            Institutional-grade design with a simple interface, so both pros and
-            newcomers can bridge value with confidence.
+            Lend to others, borrow for your needs, invest in the AmicBridge
+            ecosystem, or store your money for a simple 3% yield.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <h3>Dynamic interest rates</h3>
+            <h3>Peer-to-peer Lending</h3>
             <p>
-              Algorithmic rates respond to supply and demand, keeping liquidity
-              efficient for lenders and borrowers at every utilization level.
+              Lend money directly to other people through the AmicBridge lending
+              pool. Your money helps fund real borrowers and you earn interest
+              paid from the borrowing side of the bridge.
             </p>
           </article>
 
           <article class="card">
-            <h3>Multi-asset collateral</h3>
+            <h3>Borrow without a bank</h3>
             <p>
-              Use blue-chip assets like ETH, wBTC, and stablecoins as
-              over-collateralized backing for your loans.
+              Use your crypto as collateral and access loans from other people
+              on the platform. No branch visits, no long forms – just clear
+              terms visible in your dashboard.
             </p>
           </article>
 
           <article class="card">
-            <h3>Transparent, on-chain data</h3>
+            <h3>AmicBridge Save – 3% APY</h3>
             <p>
-              All loans, liquidations, and yields are visible on-chain.
-              Inspect, verify, and export data at any time.
+              A simple place to store your money in crypto and earn a
+              <strong>3% annual yield</strong>. Funds are placed in a safer,
+              more conservative pool so you can focus on holding, not trading.
             </p>
           </article>
 
           <article class="card">
-            <h3>Risk-managed liquidations</h3>
+            <h3>Invest in AmicBridge growth</h3>
             <p>
-              Automated alerts and configurable health factors reduce surprise
-              liquidations while protecting lenders.
+              Early supporters can allocate capital into dedicated AmicBridge
+              growth pools, helping expand the platform’s liquidity and earning
+              a share of platform fees as yield.
             </p>
           </article>
 
           <article class="card">
-            <h3>Institutional-ready</h3>
+            <h3>Multi-asset support</h3>
             <p>
-              API access, reporting endpoints, and whitelabel options make it
-              easy for funds, DAOs, and fintechs to plug into AmicBridge.
+              Start with major assets such as stablecoins and blue-chip crypto.
+              Over time new assets can be added through transparent governance.
             </p>
           </article>
 
           <article class="card">
-            <h3>Global, 24/7 access</h3>
+            <h3>Clear reporting</h3>
             <p>
-              No business hours. No paperwork. Capital flows wherever there is
-              an internet connection and a wallet.
+              Track how much you have lent, how much you have borrowed, and what
+              you earn from AmicBridge Save – all from a single, clean
+              interface.
             </p>
           </article>
         </div>
@@ -222,41 +234,45 @@ import Layout from "../layouts/Layout.astro";
       <div class="container security-grid">
         <div>
           <div class="section-heading">
-            <h2>Security at the core of the bridge</h2>
+            <h2>Security and risk protection</h2>
             <p>
-              Crypto lending only works if the bridge is trustworthy. AmicBridge
-              is engineered with defense-in-depth from day zero.
+              A bridge for money must be safe. AmicBridge is built with a
+              non-custodial, security-first architecture so that people can lend
+              and borrow with confidence.
             </p>
           </div>
 
           <ul class="security-list">
             <li>
-              Smart contracts professionally audited before mainnet launch.
+              Smart contracts to be professionally audited before full mainnet
+              launch.
             </li>
             <li>
-              Non-custodial architecture – assets stay in user-controlled
-              wallets until supplied to the protocol.
+              Non-custodial by design – users keep control of their wallets and
+              funds until they interact with the protocol.
             </li>
             <li>
-              Time-locked governance and transparent upgrade processes.
+              Transparent interest curves and collateral rules, visible and
+              verifiable on-chain.
             </li>
             <li>
-              Real-time risk monitoring and on-chain oracle price feeds.
+              Real-time monitoring for loan health and collateral safety.
             </li>
           </ul>
         </div>
 
         <div class="security-card">
-          <h3>Compliance-aware by design</h3>
+          <h3>Built around people, not institutions</h3>
           <p>
-            AmicBridge is being developed with regional compliance in mind,
-            allowing partners to build regulated products on top of a transparent
-            DeFi core.
+            AmicBridge is not a traditional bank. It is a crypto marketplace
+            where people meet each other financially through code. Compliance,
+            transparency and clear risk messaging are key priorities as the
+            platform grows.
           </p>
           <div class="security-tags">
-            <span class="badge">KYC-ready gateways</span>
-            <span class="badge">Audit trails</span>
-            <span class="badge">Reporting APIs</span>
+            <span class="badge">Non-custodial</span>
+            <span class="badge">On-chain rules</span>
+            <span class="badge">Open data</span>
           </div>
         </div>
       </div>
@@ -266,37 +282,41 @@ import Layout from "../layouts/Layout.astro";
       <div class="container stats-grid">
         <div>
           <div class="section-heading">
-            <h2>Designed to scale with the network</h2>
+            <h2>A long-term bridge for savings and credit</h2>
             <p>
-              AmicBridge is a platform for programmable credit – not just a
-              single app. Build products, integrate liquidity, or bring your own
-              strategy.
+              AmicBridge is designed so that everyday people, long-term
+              investors and crypto natives can all meet on the same platform
+              with different needs but shared tools.
             </p>
           </div>
 
           <div class="stats">
             <div class="stat">
-              <span class="stat-label">Target launch networks</span>
-              <span class="stat-value">Ethereum &amp; L2</span>
+              <span class="stat-label">Core use cases</span>
+              <span class="stat-value">
+                Lending, borrowing, 3% saving, growth investing
+              </span>
             </div>
             <div class="stat">
-              <span class="stat-label">Initial assets</span>
-              <span class="stat-value">USDC, DAI, ETH, wBTC</span>
+              <span class="stat-label">Who it’s for</span>
+              <span class="stat-value">
+                Individuals, communities, small businesses and crypto investors
+              </span>
             </div>
             <div class="stat">
-              <span class="stat-label">Roadmap</span>
-              <span class="stat-value">Cross-chain bridge pools</span>
+              <span class="stat-label">Headquarters</span>
+              <span class="stat-value">Oslo, Norway</span>
             </div>
           </div>
         </div>
 
         <aside class="quote-card">
           <p class="quote-text">
-            “The future of credit is interoperable, programmatic, and open. The
-            bridge between lenders and borrowers shouldn’t be a bank – it should
-            be verifiable code.”
+            “Money should be able to move directly between people who trust the
+            same rules – without needing a bank in the middle. AmicBridge is
+            built to be that bridge.”
           </p>
-          <p class="quote-author">— AmicBridge core team</p>
+          <p class="quote-author">— Robert Amic Olsen, CEO of AmicBridge</p>
         </aside>
       </div>
     </section>
@@ -306,73 +326,88 @@ import Layout from "../layouts/Layout.astro";
         <div class="section-heading">
           <h2>Frequently asked questions</h2>
           <p>
-            A quick overview of the most important points before you cross the
-            bridge.
+            Key answers about what AmicBridge is – and what it is not – before
+            you decide to lend, borrow or save.
           </p>
         </div>
 
         <div class="faq">
           <details class="faq-item" open>
-            <summary>What is AmicBridge?</summary>
+            <summary>Is AmicBridge a bank?</summary>
             <p>
-              AmicBridge is a crypto lending and borrowing platform that connects
-              lenders and borrowers through smart contracts. Lenders earn yield
-              by supplying assets, while borrowers post collateral to unlock
-              liquidity.
+              No. AmicBridge is not a bank and does not hold deposits in the
+              traditional banking sense. It is a crypto platform that uses smart
+              contracts to connect people who want to lend, borrow or save in
+              a non-custodial way.
             </p>
           </details>
 
           <details class="faq-item">
-            <summary>Do you hold my funds?</summary>
+            <summary>Who provides the money for loans?</summary>
             <p>
-              No. AmicBridge is non-custodial. You interact with the protocol
-              directly from your own wallet. The smart contracts control the
-              pooled liquidity; you can withdraw based on the current pool
-              utilization.
+              All loan liquidity comes from people who choose to lend through
+              AmicBridge. When you borrow, you are borrowing from a shared pool
+              funded by many individual lenders – not from a bank balance
+              sheet.
             </p>
           </details>
 
           <details class="faq-item">
-            <summary>How are interest rates determined?</summary>
+            <summary>How does the 3% AmicBridge Save yield work?</summary>
             <p>
-              Interest rates are algorithmic and depend on pool utilization.
-              As more users borrow relative to supplied liquidity, borrow APR
-              increases and deposit APY adjusts, keeping the market in balance.
+              AmicBridge Save is designed as a more stable, conservative pool
+              with a target annual yield of 3%. Returns are generated from
+              participation in the wider lending ecosystem and platform fees.
+              As with all crypto products, yields are not guaranteed and carry
+              risk.
             </p>
           </details>
 
           <details class="faq-item">
-            <summary>When will the mainnet launch?</summary>
+            <summary>How can I invest in AmicBridge?</summary>
             <p>
-              The team is preparing a testnet release followed by a staged
-              mainnet launch after audits and community testing. Join the waitlist
-              to receive detailed updates and launch timelines.
+              You can participate by lending into the pools, using the platform
+              as a borrower, and in the future by allocating capital to
+              dedicated growth products designed to share platform revenue with
+              long-term supporters.
             </p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="cta">
+    <section id="company" class="cta">
       <div class="container cta-inner">
         <div>
-          <h2>Be the first to cross the bridge</h2>
+          <h2>Contact AmicBridge</h2>
           <p>
-            Join the early access list to test AmicBridge, propose features, and
-            help shape a safer, more open credit layer for crypto.
+            AmicBridge is built in Oslo, Norway, with a mission to become the
+            trusted bridge where people lend, borrow and save money together in
+            crypto.
           </p>
+          <div class="contact-block">
+            <p><strong>Company</strong>: AmicBridge</p>
+            <p><strong>CEO</strong>: Robert Amic Olsen</p>
+            <p><strong>Location</strong>: Oslo, Norway</p>
+            <p>
+              <strong>Email</strong>:
+              <a href="mailto:robertamicolsen@gmail.com">
+                robertamicolsen@gmail.com
+              </a>
+            </p>
+          </div>
         </div>
 
         <form class="cta-form" on:submit|preventDefault>
           <input
             type="email"
             name="email"
-            placeholder="you@example.com"
+            placeholder="Your e-mail for updates"
             class="input"
             required
           />
           <button type="submit" class="btn btn-primary btn-lg">
-            Join waitlist
+            Join AmicBridge updates
           </button>
         </form>
       </div>
@@ -385,21 +420,23 @@ import Layout from "../layouts/Layout.astro";
             <span class="logo-mark">AB</span>
             <span class="logo-text">AmicBridge</span>
           </div>
-          <p>Crypto lending and borrowing, connected through transparent code.</p>
+          <p>
+            A people-first bridge for lending, borrowing and saving money in
+            crypto – without banks.
+          </p>
         </div>
 
         <div class="footer-links">
           <div>
             <h4>Product</h4>
             <a href="#how-it-works">How it works</a>
-            <a href="#features">Features</a>
+            <a href="#products">Products</a>
             <a href="#security">Security</a>
           </div>
           <div>
             <h4>Company</h4>
-            <a href="#">About</a>
-            <a href="#">Roadmap</a>
-            <a href="#">Partners</a>
+            <a href="#company">Contact</a>
+            <a href="#faq">FAQ</a>
           </div>
           <div>
             <h4>Legal</h4>
@@ -412,10 +449,11 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
-          <p>© {new Date().getFullYear()} AmicBridge. All rights reserved.</p>
+          <p>© {year} AmicBridge. All rights reserved.</p>
           <p class="footer-note">
-            Crypto assets are volatile and involve risk. This site is for
-            informational purposes only and does not constitute financial advice.
+            Crypto assets are volatile and involve risk, including possible loss
+            of principal. This site is for informational purposes only and does
+            not constitute financial, legal or tax advice.
           </p>
         </div>
       </div>
@@ -621,6 +659,10 @@ import Layout from "../layouts/Layout.astro";
     line-height: 1.6;
   }
 
+  .hero-subtitle strong {
+    font-weight: 600;
+  }
+
   .hero-actions {
     margin-top: 1.5rem;
     display: flex;
@@ -721,7 +763,7 @@ import Layout from "../layouts/Layout.astro";
   .hero-table-head,
   .hero-row {
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
     padding: 0.45rem 0.7rem;
     align-items: center;
   }
@@ -987,6 +1029,21 @@ import Layout from "../layouts/Layout.astro";
     font-size: 0.92rem;
     color: #cbd5f5;
     max-width: 24rem;
+  }
+
+  .contact-block {
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+    color: #e5e7eb;
+  }
+
+  .contact-block a {
+    color: #38bdf8;
+    text-decoration: none;
+  }
+
+  .contact-block a:hover {
+    text-decoration: underline;
   }
 
   .cta-form {
