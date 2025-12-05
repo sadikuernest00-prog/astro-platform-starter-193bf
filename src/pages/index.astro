@@ -9,23 +9,21 @@
     :root {
       --bg: #020617;
       --surface: #020617;
-      --surface-soft: #020617;
-      --surface-elevated: #020617;
       --accent: #2563eb;
-      --accent-alt: #1d4ed8;
-      --accent-soft: rgba(37, 99, 235, 0.12);
+      --accent-alt: #16a34a;
+      --accent-soft: rgba(37, 99, 235, 0.1);
       --accent-soft-strong: rgba(37, 99, 235, 0.18);
       --border-subtle: rgba(30, 64, 175, 0.4);
       --border-strong: rgba(37, 99, 235, 0.9);
       --text: #e5e7eb;
       --muted: #9ca3af;
       --muted-2: #6b7280;
-      --shadow-hero: 0 20px 60px rgba(15, 23, 42, 0.9);
-      --shadow-card: 0 16px 48px rgba(15, 23, 42, 0.95);
+      --shadow-hero: 0 24px 70px rgba(15, 23, 42, 0.95);
+      --shadow-card: 0 18px 55px rgba(15, 23, 42, 0.96);
       --radius-md: 16px;
       --radius-lg: 22px;
       --radius-xl: 28px;
-      --max-width: 1120px;
+      --max-width: 1180px;
     }
 
     * {
@@ -73,6 +71,31 @@
       backdrop-filter: blur(18px);
       background: linear-gradient(to bottom, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.9), transparent);
       border-bottom: 1px solid rgba(15, 23, 42, 1);
+    }
+
+    .top-banner {
+      background: rgba(22, 101, 52, 0.15);
+      border-bottom: 1px solid rgba(34, 197, 94, 0.35);
+      font-size: 0.78rem;
+      color: #bbf7d0;
+    }
+
+    .top-banner-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.35rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .top-banner strong {
+      font-weight: 600;
+    }
+
+    .top-banner span {
+      color: #dcfce7;
     }
 
     .nav {
@@ -932,6 +955,46 @@
       color: var(--muted-2);
     }
 
+    .contact-steps {
+      margin-top: 0.8rem;
+      border-radius: 14px;
+      padding: 0.75rem 0.9rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(31, 41, 55, 1);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .contact-steps strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #e5e7eb;
+    }
+
+    .contact-steps ol {
+      padding-left: 1.15rem;
+      margin: 0.25rem 0 0;
+    }
+
+    .contact-steps li {
+      margin-bottom: 0.15rem;
+    }
+
+    .form-success {
+      display: none;
+      margin-top: 0.7rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 12px;
+      border: 1px solid rgba(34, 197, 94, 0.8);
+      background: rgba(22, 163, 74, 0.12);
+      color: #bbf7d0;
+      font-size: 0.8rem;
+    }
+
+    .form-success.visible {
+      display: block;
+    }
+
     /* Footer */
 
     footer {
@@ -977,6 +1040,12 @@
       color: var(--muted-2);
     }
 
+    .footer-company {
+      font-size: 0.78rem;
+      color: var(--muted-2);
+      margin-top: 0.2rem;
+    }
+
     /* Responsive */
 
     @media (max-width: 900px) {
@@ -1017,6 +1086,11 @@
         flex-direction: column;
         align-items: stretch;
       }
+
+      .top-banner-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     @media (max-width: 640px) {
@@ -1029,6 +1103,14 @@
 <body>
 <div class="page">
   <header>
+    <div class="top-banner">
+      <div class="top-banner-inner">
+        <div>
+          <strong>Early-stage concept.</strong>
+          <span>Currently collecting interest from potential members and partners.</span>
+        </div>
+      </div>
+    </div>
     <div class="shell nav" aria-label="Main navigation">
       <a href="#" class="logo">
         <div class="logo-icon">AB</div>
@@ -1157,7 +1239,7 @@
             </div>
             <div>
               <div class="trust-item-label">Documented terms</div>
-              <div class="trust-item-sub">Written agreements and clear schedules, per loan.</div>
+              <div class="trust-item-sub">Written agreements and clear schedules for each loan.</div>
             </div>
             <div>
               <div class="trust-item-label">Shared history</div>
@@ -1467,7 +1549,7 @@
       <div class="shell">
         <div class="section-header">
           <div class="section-label">Contact</div>
-          <h2 class="section-title">Talk to us about membership or collaboration.</h2>
+          <h2 class="section-title">Send a request about membership or collaboration.</h2>
           <p class="section-text">
             Use this form for questions about the concept, membership or potential cooperation. When the platform is live, onboarding and applications
             will be handled through secure, dedicated flows.
@@ -1481,14 +1563,14 @@
               we will provide secure channels for required documentation.
             </p>
 
-            <form class="contact-form" method="post" action="#">
+            <form class="contact-form" id="contact-form" method="post" action="#">
               <div class="field">
                 <label for="name">Name</label>
-                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name">
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
               </div>
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
               </div>
               <div class="field">
                 <label for="type">Are you mainly interested in lending or borrowing?</label>
@@ -1496,11 +1578,24 @@
               </div>
               <div class="field">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" placeholder="Briefly describe your situation or what you want to explore."></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Briefly describe your situation or what you want to explore." required></textarea>
                 <small>This form is for general contact only. It does not create a loan agreement or membership.</small>
               </div>
               <button class="btn btn-secondary" type="submit">Send message</button>
+
+              <div class="form-success" id="form-success">
+                Thank you. Your message has been registered on this website. In a real deployment, this form would send your details securely to the Amicbridge team.
+              </div>
             </form>
+
+            <div class="contact-steps">
+              <strong>What happens after you send this form (conceptually):</strong>
+              <ol>
+                <li>We review your message and basic details.</li>
+                <li>If the concept is live in your country, you will receive information about next steps and requirements.</li>
+                <li>No loan is created until both sides have passed checks and signed a written agreement.</li>
+              </ol>
+            </div>
           </div>
 
           <div style="font-size:0.86rem;color:var(--muted);display:flex;flex-direction:column;gap:0.6rem;">
@@ -1529,6 +1624,9 @@
           Amicbridge is a private network and digital tool for documented lending and borrowing between individuals.
         </div>
         <div>© <span id="year"></span> Amicbridge. All rights reserved.</div>
+        <div class="footer-company">
+          Amicbridge AS (planned) • [Org. no. to be added] • [City], [Country]
+        </div>
       </div>
       <div class="footer-col">
         <div class="footer-links">
@@ -1600,6 +1698,18 @@
   if (btnLendPricing) {
     btnLendPricing.addEventListener("click", function () {
       openContactWithType("Lending");
+    });
+  }
+
+  // Simple front-end "success" handling for the form (no real backend)
+  var contactForm = document.getElementById("contact-form");
+  var formSuccess = document.getElementById("form-success");
+
+  if (contactForm && formSuccess) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent real submission in this static example
+      formSuccess.classList.add("visible");
+      // In a real implementation, you would send this data to your backend here.
     });
   }
 </script>
