@@ -2,38 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Amicbridge – A Trusted Network for Lending & Borrowing</title>
+  <title>Amicbridge – Private Network for Responsible Lending & Borrowing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Amicbridge connects verified people who want to lend and borrow money through a trusted, private network.">
+  <meta name="description" content="Amicbridge is a private, vetted network that connects people who want to lend and borrow money in a structured, transparent way, with identity checks, documentation and clear processes.">
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-light: #111827;
-      --card: #020617;
+      --bg: #020617;
+      --surface: #020617;
+      --surface-soft: #020617;
+      --surface-elevated: #020617;
       --accent: #2563eb;
-      --accent-soft: rgba(37,99,235,0.1);
+      --accent-alt: #1d4ed8;
+      --accent-soft: rgba(37, 99, 235, 0.12);
+      --accent-soft-strong: rgba(37, 99, 235, 0.18);
+      --border-subtle: rgba(30, 64, 175, 0.4);
+      --border-strong: rgba(37, 99, 235, 0.9);
       --text: #e5e7eb;
       --muted: #9ca3af;
-      --border: #1f2937;
-      --danger: #dc2626;
-      --shadow-soft: 0 18px 45px rgba(0,0,0,0.45);
-      --radius-lg: 18px;
-      --radius-xl: 26px;
+      --muted-2: #6b7280;
+      --shadow-hero: 0 20px 60px rgba(15, 23, 42, 0.9);
+      --shadow-card: 0 16px 48px rgba(15, 23, 42, 0.95);
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
       --max-width: 1120px;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #000 100%);
+      background:
+        radial-gradient(circle at top left, rgba(30, 64, 175, 0.26), transparent 60%),
+        radial-gradient(circle at 80% 0, rgba(15, 118, 110, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.14), transparent 55%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
 
     a {
@@ -54,69 +64,85 @@
       padding: 0 1.5rem;
     }
 
+    /* Header / nav */
+
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
       backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(15,23,42,0.96), rgba(15,23,42,0.8), transparent);
-      border-bottom: 1px solid rgba(15,23,42,0.9);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.9), transparent);
+      border-bottom: 1px solid rgba(15, 23, 42, 1);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 0;
+      padding: 0.9rem 0;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      font-weight: 700;
+      gap: 0.7rem;
     }
 
     .logo-icon {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #60a5fa 0, #2563eb 40%, #1d4ed8 65%, #1e293b 100%);
+      background:
+        radial-gradient(circle at 30% 0, #eff6ff 0, #bfdbfe 32%, #60a5fa 60%, #1d4ed8 92%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
-      color: #e5e7eb;
-      box-shadow: 0 12px 30px rgba(37,99,235,0.65);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #0f172a;
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.9);
     }
 
-    .logo span {
-      letter-spacing: 0.06em;
-      font-size: 0.95rem;
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .logo-text-main {
       text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .logo-text-sub {
+      font-size: 0.72rem;
+      color: var(--muted-2);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      gap: 1.7rem;
       font-size: 0.9rem;
       color: var(--muted);
     }
 
     .nav-links a {
       position: relative;
-      padding-bottom: 0.1rem;
+      padding-bottom: 0.18rem;
     }
 
     .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -0.15rem;
+      bottom: -0.14rem;
       width: 0;
       height: 2px;
-      background: linear-gradient(to right, #60a5fa, #2563eb);
+      border-radius: 999px;
+      background: linear-gradient(to right, #60a5fa, #22c55e);
       transition: width 0.18s ease-out;
     }
 
@@ -127,14 +153,14 @@
     .nav-cta {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.8rem;
     }
 
     .btn {
       appearance: none;
       border: none;
       outline: none;
-      padding: 0.55rem 1.2rem;
+      padding: 0.55rem 1.35rem;
       border-radius: 999px;
       font-size: 0.9rem;
       cursor: pointer;
@@ -142,43 +168,45 @@
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
-      transition: all 0.18s ease-out;
+      transition: all 0.2s ease-out;
       white-space: nowrap;
     }
 
     .btn-outline {
-      border: 1px solid rgba(148,163,184,0.7);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.65);
       color: var(--muted);
-      background: rgba(15,23,42,0.4);
     }
 
     .btn-outline:hover {
       border-color: #e5e7eb;
       color: #e5e7eb;
-      background: rgba(15,23,42,0.9);
+      background: rgba(15, 23, 42, 0.98);
+      transform: translateY(-1px);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: #e5e7eb;
-      box-shadow: 0 14px 30px rgba(37,99,235,0.7);
+      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.85);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 45px rgba(37,99,235,0.9);
-      filter: brightness(1.05);
+      filter: brightness(1.04);
+      box-shadow: 0 20px 50px rgba(37, 99, 235, 1);
     }
 
     .btn-secondary {
-      background: rgba(15,23,42,0.95);
-      border: 1px solid rgba(51,65,85,0.9);
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(51, 65, 85, 0.95);
       color: var(--text);
     }
 
     .btn-secondary:hover {
       border-color: #60a5fa;
-      box-shadow: 0 14px 30px rgba(15,23,42,0.8);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.95);
+      transform: translateY(-1px);
     }
 
     main {
@@ -188,34 +216,34 @@
     /* Hero */
 
     .hero {
-      padding: 3.25rem 0 3.5rem;
+      padding: 3.1rem 0 3.4rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 3rem;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 3.1rem;
       align-items: center;
     }
 
     .hero-kicker {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
       color: #93c5fd;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.8rem;
     }
 
     .hero-title {
-      font-size: clamp(2.25rem, 3.2vw + 1.2rem, 3.3rem);
-      line-height: 1.05;
-      font-weight: 720;
+      font-size: clamp(2.3rem, 3.1vw + 1.3rem, 3.4rem);
+      line-height: 1.04;
       letter-spacing: -0.04em;
+      font-weight: 740;
       margin-bottom: 1rem;
     }
 
     .hero-title span {
-      background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
+      background: linear-gradient(to right, #60a5fa, #22c55e);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -224,7 +252,7 @@
       font-size: 0.98rem;
       color: var(--muted);
       max-width: 34rem;
-      margin-bottom: 1.7rem;
+      margin-bottom: 1.6rem;
     }
 
     .hero-cta-row {
@@ -236,37 +264,77 @@
     }
 
     .hero-note {
-      font-size: 0.78rem;
-      color: var(--muted);
+      font-size: 0.8rem;
+      color: var(--muted-2);
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
+    }
+
+    .hero-note-icon {
+      width: 19px;
+      height: 19px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
-      font-size: 0.75rem;
+      gap: 0.45rem;
+      margin-top: 0.9rem;
+      font-size: 0.76rem;
     }
 
     .pill {
-      padding: 0.25rem 0.7rem;
+      padding: 0.26rem 0.78rem;
       border-radius: 999px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: rgba(15,23,42,0.7);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
       color: var(--muted);
     }
 
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.7rem;
+      margin-top: 1.7rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+    }
+
+    .hero-stat-value {
+      font-size: 1.1rem;
+      font-weight: 650;
+      color: #e5e7eb;
+    }
+
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--muted-2);
+    }
+
+    /* Hero card */
+
     .hero-card {
-      background: radial-gradient(circle at top left, rgba(37,99,235,0.25), transparent 48%),
-                  radial-gradient(circle at top right, rgba(236,72,153,0.3), transparent 52%),
-                  var(--bg-light);
+      background:
+        radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.18), transparent 60%),
+        radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.25), transparent 55%),
+        rgba(15, 23, 42, 0.98);
       border-radius: var(--radius-xl);
-      padding: 1.2rem;
-      border: 1px solid rgba(51,65,85,0.9);
-      box-shadow: var(--shadow-soft);
+      padding: 1.35rem;
+      border: 1px solid rgba(31, 41, 55, 0.98);
+      box-shadow: var(--shadow-hero);
       position: relative;
       overflow: hidden;
     }
@@ -275,8 +343,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.09), transparent 60%);
-      opacity: 0.9;
+      background: radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.08), transparent 60%);
       pointer-events: none;
     }
 
@@ -295,51 +362,55 @@
     }
 
     .card-title {
-      font-size: 0.9rem;
+      font-size: 0.94rem;
       font-weight: 600;
-      color: #e5e7eb;
+    }
+
+    .card-sub {
+      font-size: 0.76rem;
+      color: var(--muted-2);
     }
 
     .card-badge {
       font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #a5b4fc;
-      padding: 0.25rem 0.7rem;
+      letter-spacing: 0.2em;
+      color: #bfdbfe;
+      padding: 0.25rem 0.75rem;
       border-radius: 999px;
-      border: 1px dashed rgba(129,140,248,0.8);
-      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(129, 140, 248, 0.9);
+      background: rgba(15, 23, 42, 0.95);
     }
 
     .match-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.75rem;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
     }
 
     .match-col {
-      background: rgba(15,23,42,0.88);
-      border-radius: 16px;
-      padding: 0.7rem 0.75rem;
-      border: 1px solid rgba(31,41,55,0.9);
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 18px;
+      padding: 0.75rem 0.8rem;
+      border: 1px solid rgba(31, 41, 55, 0.98);
     }
 
     .match-label {
       font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       color: #9ca3af;
       margin-bottom: 0.25rem;
     }
 
     .match-name {
       font-weight: 600;
-      margin-bottom: 0.1rem;
+      margin-bottom: 0.15rem;
     }
 
     .match-meta {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: #9ca3af;
     }
 
@@ -348,17 +419,17 @@
       align-items: center;
       gap: 0.25rem;
       font-size: 0.68rem;
-      padding: 0.2rem 0.55rem;
+      padding: 0.22rem 0.6rem;
       border-radius: 999px;
-      background: rgba(22,163,74,0.15);
-      border: 1px solid rgba(34,197,94,0.7);
+      background: rgba(22, 163, 74, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.9);
       color: #bbf7d0;
       margin-top: 0.35rem;
     }
 
-    .match-chip.danger {
-      background: rgba(220,38,38,0.15);
-      border-color: rgba(248,113,113,0.9);
+    .match-chip.red {
+      background: rgba(220, 38, 38, 0.13);
+      border-color: rgba(248, 113, 113, 0.9);
       color: #fecaca;
     }
 
@@ -366,21 +437,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 0.6rem;
+      margin-top: 0.75rem;
+      gap: 0.7rem;
     }
 
     .risk-label {
-      font-size: 0.75rem;
-      color: #9ca3af;
+      font-size: 0.78rem;
+      color: var(--muted-2);
     }
 
     .risk-meter {
       flex: 1;
-      margin-left: 0.8rem;
-      height: 7px;
+      height: 8px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(31,41,55,0.9);
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(31, 41, 55, 0.98);
       overflow: hidden;
       position: relative;
     }
@@ -388,18 +459,18 @@
     .risk-fill {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, #22c55e 0, #eab308 50%, #ef4444 100%);
+      background: linear-gradient(90deg, #22c55e 0, #eab308 52%, #ef4444 100%);
       transform-origin: left;
-      transform: scaleX(0.42);
+      transform: scaleX(0.44);
     }
 
-    .trust-bar {
+    .trust-row {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      font-size: 0.72rem;
-      color: #9ca3af;
+      align-items: center;
       margin-top: 0.7rem;
+      font-size: 0.74rem;
+      color: #9ca3af;
     }
 
     .trust-dots {
@@ -411,39 +482,91 @@
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: rgba(148,163,184,0.6);
+      background: rgba(148, 163, 184, 0.7);
     }
 
     .dot.active {
       background: #60a5fa;
-      box-shadow: 0 0 0 4px rgba(37,99,235,0.28);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.4);
+    }
+
+    .hero-footnote {
+      font-size: 0.7rem;
+      color: var(--muted-2);
+      margin-top: 0.3rem;
+    }
+
+    /* Trust strip */
+
+    .trust-bar {
+      padding: 0.85rem 1.1rem;
+      margin-top: 1.25rem;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85));
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .trust-label-main {
+      display: flex;
+      align-items: center;
+      gap: 0.42rem;
+    }
+
+    .trust-dot-main {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.27);
+    }
+
+    .trust-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+    }
+
+    .trust-item-label {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .trust-item-sub {
+      font-size: 0.75rem;
+      color: var(--muted-2);
     }
 
     /* Sections */
 
     section {
-      padding: 2.5rem 0;
-      border-top: 1px solid rgba(15,23,42,0.9);
+      padding: 2.6rem 0;
+      border-top: 1px solid rgba(15, 23, 42, 1);
     }
 
     .section-header {
-      margin-bottom: 1.8rem;
-      max-width: 34rem;
+      margin-bottom: 1.9rem;
+      max-width: 36rem;
     }
 
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #6b7280;
+      letter-spacing: 0.22em;
+      color: var(--muted-2);
       margin-bottom: 0.35rem;
     }
 
     .section-title {
-      font-size: 1.35rem;
-      font-weight: 600;
+      font-size: 1.4rem;
+      font-weight: 650;
       letter-spacing: -0.03em;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
 
     .section-text {
@@ -453,73 +576,74 @@
 
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1rem;
       font-size: 0.88rem;
     }
 
     .step {
-      background: rgba(15,23,42,0.9);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31,41,55,0.9);
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(31, 41, 55, 1);
       padding: 1rem;
+      box-shadow: var(--shadow-card);
     }
 
     .step-num {
-      width: 24px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
       border-radius: 999px;
-      background: rgba(37,99,235,0.18);
-      border: 1px solid rgba(59,130,246,0.9);
+      background: rgba(37, 99, 235, 0.18);
+      border: 1px solid rgba(59, 130, 246, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: #bfdbfe;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
     .step-title {
       font-size: 0.95rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
     }
 
     .step-text {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--muted);
     }
 
     .two-col {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2rem;
+      gap: 2.1rem;
       align-items: flex-start;
     }
 
     .card {
-      background: rgba(15,23,42,0.9);
+      background: rgba(15, 23, 42, 0.98);
       border-radius: var(--radius-lg);
-      padding: 1.2rem;
-      border: 1px solid rgba(31,41,55,0.9);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+      padding: 1.25rem;
+      border: 1px solid rgba(31, 41, 55, 1);
+      box-shadow: var(--shadow-card);
     }
 
     .card h3 {
       font-size: 1rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
     }
 
     .card p {
       font-size: 0.88rem;
       color: var(--muted);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
     }
 
     .bullet-list {
       list-style: none;
-      margin: 0.5rem 0 0;
       padding: 0;
+      margin: 0.5rem 0 0;
       font-size: 0.86rem;
       color: var(--muted);
     }
@@ -535,49 +659,151 @@
       content: "•";
       color: #60a5fa;
       font-size: 0.8rem;
-      margin-top: 0.1rem;
+      margin-top: 0.12rem;
     }
 
     .pill-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.4rem;
+      gap: 0.45rem;
+      margin-top: 0.55rem;
       font-size: 0.78rem;
     }
 
     .pill-soft {
-      padding: 0.25rem 0.7rem;
+      padding: 0.26rem 0.78rem;
       border-radius: 999px;
-      background: rgba(37,99,235,0.08);
-      border: 1px solid rgba(37,99,235,0.4);
+      background: rgba(37, 99, 235, 0.13);
+      border: 1px solid rgba(37, 99, 235, 0.55);
       color: #bfdbfe;
     }
 
+    /* Compliance strip */
+
+    .compliance-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+    }
+
+    .compliance-item {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 0.9rem;
+    }
+
+    .compliance-label {
+      font-size: 0.8rem;
+      font-weight: 550;
+      margin-bottom: 0.25rem;
+    }
+
+    .compliance-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Testimonials */
+
+    .testimonials {
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.9), transparent 55%), rgba(15, 23, 42, 1);
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .test-card {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 1rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+      box-shadow: var(--shadow-card);
+    }
+
+    .test-quote {
+      margin-bottom: 0.7rem;
+    }
+
+    .test-person {
+      margin-top: 0.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .test-name {
+      font-size: 0.86rem;
+      color: #e5e7eb;
+      font-weight: 550;
+    }
+
+    .test-role {
+      font-size: 0.78rem;
+      color: var(--muted-2);
+    }
+
+    /* Pricing */
+
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.3rem;
     }
 
     .price-card {
-      background: rgba(15,23,42,0.95);
+      background: rgba(15, 23, 42, 0.98);
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(55,65,81,0.9);
-      padding: 1.2rem;
+      border: 1px solid rgba(55, 65, 81, 1);
+      padding: 1.25rem;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-card);
     }
 
     .price-card.highlight {
-      border-color: rgba(37,99,235,0.9);
-      box-shadow: 0 18px 55px rgba(37,99,235,0.6);
+      border-color: var(--border-strong);
+      box-shadow: 0 22px 65px rgba(37, 99, 235, 0.95);
+    }
+
+    .price-card.highlight::before {
+      content: "";
+      position: absolute;
+      inset: -120px;
+      background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.32), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .price-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-small {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #a5b4fc;
+      padding: 0.24rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(129, 140, 248, 0.9);
+      display: inline-block;
+      margin-bottom: 0.55rem;
+      background: rgba(15, 23, 42, 0.96);
     }
 
     .price-tag {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 650;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.2rem;
     }
 
     .price-tag span {
@@ -586,17 +812,10 @@
       color: var(--muted);
     }
 
-    .badge-small {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #a5b4fc;
-      padding: 0.22rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(129,140,248,0.7);
-      display: inline-block;
-      margin-bottom: 0.5rem;
-      background: rgba(15,23,42,0.9);
+    .price-copy {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
     }
 
     .price-list {
@@ -610,42 +829,117 @@
     .price-list li {
       display: flex;
       gap: 0.4rem;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.35rem;
     }
 
     .price-list li::before {
       content: "✓";
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: #4ade80;
-      margin-top: 0.12rem;
+      margin-top: 0.08rem;
     }
+
+    .guarantee-text {
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--muted-2);
+    }
+
+    /* FAQ */
 
     .faq-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.05rem;
       font-size: 0.87rem;
     }
 
     .faq-item {
       padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(31,41,55,0.9);
+      border-bottom: 1px solid rgba(31, 41, 55, 1);
     }
 
     .faq-q {
       font-weight: 550;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
     }
 
     .faq-a {
       color: var(--muted);
     }
 
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .contact-small {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.84rem;
+    }
+
+    .field label {
+      color: #e5e7eb;
+    }
+
+    .field input,
+    .field textarea {
+      background: rgba(15, 23, 42, 1);
+      border-radius: 12px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 0.6rem 0.7rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.86rem;
+      resize: vertical;
+      min-height: 42px;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.7);
+    }
+
+    .field small {
+      font-size: 0.75rem;
+      color: var(--muted-2);
+    }
+
+    /* Footer */
+
     footer {
-      border-top: 1px solid rgba(15,23,42,0.9);
-      padding: 1.5rem 0 2rem;
+      border-top: 1px solid rgba(15, 23, 42, 1);
+      padding: 1.7rem 0 2.2rem;
       font-size: 0.8rem;
       color: var(--muted);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.8), transparent 60%);
     }
 
     .footer-row {
@@ -653,7 +947,13 @@
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 1rem;
-      align-items: center;
+      align-items: flex-start;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
     }
 
     .footer-links {
@@ -666,22 +966,50 @@
       color: #9ca3af;
     }
 
+    .footer-topline {
+      font-size: 0.8rem;
+      color: var(--muted-2);
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-legal {
+      font-size: 0.78rem;
+      color: var(--muted-2);
+    }
+
+    /* Responsive */
+
     @media (max-width: 900px) {
       .hero-grid,
       .steps-grid,
       .two-col,
+      .test-grid,
       .pricing-grid,
-      .faq-grid {
-        grid-template-columns: minmax(0,1fr);
+      .faq-grid,
+      .contact-grid,
+      .compliance-strip {
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .hero {
-        padding-top: 2.5rem;
+        padding-top: 2.4rem;
+      }
+
+      .hero-card {
+        margin-top: 0.7rem;
+      }
+
+      .trust-bar {
+        border-radius: 18px;
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       .nav-links {
+        display: none;
+      }
+
+      .nav-cta .btn-outline {
         display: none;
       }
 
@@ -689,9 +1017,11 @@
         flex-direction: column;
         align-items: stretch;
       }
+    }
 
-      .hero-card {
-        margin-top: 0.5rem;
+    @media (max-width: 640px) {
+      .hero-stats {
+        gap: 1rem;
       }
     }
   </style>
@@ -699,86 +1029,139 @@
 <body>
 <div class="page">
   <header>
-    <div class="shell nav">
-      <div class="logo">
+    <div class="shell nav" aria-label="Main navigation">
+      <a href="#" class="logo">
         <div class="logo-icon">AB</div>
-        <span>Amicbridge</span>
-      </div>
-      <nav class="nav-links">
+        <div class="logo-text">
+          <div class="logo-text-main">Amicbridge</div>
+          <div class="logo-text-sub">Private network for responsible lending</div>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
         <a href="#how">How it works</a>
         <a href="#safety">Safety</a>
         <a href="#pricing">Pricing</a>
+        <a href="#compliance">Compliance</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-cta">
-        <button class="btn btn-outline">Log in</button>
-        <button class="btn btn-primary">Apply to join</button>
+        <button class="btn btn-outline" type="button">Log in</button>
+        <button class="btn btn-primary" type="button" id="btn-apply-nav">Apply to join</button>
       </div>
     </div>
   </header>
 
   <main>
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="shell hero-grid">
         <div>
-          <div class="hero-kicker">A private network for money you trust</div>
-          <h1 class="hero-title">
-            Be the bridge between people who <span>lend</span> and people who <span>borrow</span>.
+          <p class="hero-kicker">Private network • Real people • Documented agreements</p>
+          <h1 id="hero-heading" class="hero-title">
+            A structured bridge between people who <span>lend</span> and people who <span>borrow</span>.
           </h1>
           <p class="hero-subtitle">
-            Amicbridge connects verified members who want to lend and borrow money in a structured, transparent way.
-            We are not a bank — we are the network between people and capital, with clear rules and digital contracts.
+            Amicbridge is a membership-based network for individuals who want a clear, documented way to lend and borrow money with other verified people. No public marketplace – just curated matches, written terms and transparent follow-up.
           </p>
 
           <div class="hero-cta-row">
-            <button class="btn btn-primary">Request to borrow</button>
-            <button class="btn btn-secondary">Apply as a lender</button>
+            <button class="btn btn-primary" type="button" id="btn-borrow-hero">Request to borrow</button>
+            <button class="btn btn-secondary" type="button" id="btn-lend-hero">Apply as a lender</button>
           </div>
-          <div class="hero-note">
-            <span>🔒</span>
-            <span>Identity verified, contracts signed digitally, payments tracked inside the platform.</span>
+
+          <div class="hero-note" aria-label="Security information">
+            <span class="hero-note-icon">🔒</span>
+            <span>Identity checks, digital agreements and a full history of payments and messages for each relationship.</span>
           </div>
-          <div class="pill-row">
-            <div class="pill">Private network access</div>
-            <div class="pill">No public listings</div>
-            <div class="pill">Transparent terms</div>
+
+          <div class="pill-row" aria-hidden="true">
+            <div class="pill">Closed, invitation-based network</div>
+            <div class="pill">Documented loan agreements</div>
+            <div class="pill">Clear repayment schedules</div>
+          </div>
+
+          <div class="hero-stats" aria-label="Illustrative characteristics">
+            <div class="hero-stat">
+              <span class="hero-stat-value">NOK 25 000–150 000</span>
+              <span class="hero-stat-label">Typical loan size band (illustrative)</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">12–36 months</span>
+              <span class="hero-stat-label">Common repayment horizons</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">1:1 relationships</span>
+              <span class="hero-stat-label">No public bidding or auctions</span>
+            </div>
           </div>
         </div>
 
-        <div class="hero-card">
+        <aside class="hero-card" aria-label="Illustration of a structured loan">
           <div class="card-inner">
             <div class="card-header">
-              <div class="card-title">Example match in Amicbridge</div>
-              <div class="card-badge">Live network</div>
+              <div>
+                <div class="card-title">Example relationship inside Amicbridge</div>
+                <div class="card-sub">Illustration only – not a live offer or advice.</div>
+              </div>
+              <div class="card-badge">Structured agreement</div>
             </div>
+
             <div class="match-grid">
               <div class="match-col">
                 <div class="match-label">Borrower</div>
-                <div class="match-name">Sara • Member since 2024</div>
-                <div class="match-meta">NOK 80 000 • 24 months</div>
-                <div class="match-chip danger">High commitment • Signed contract</div>
+                <div class="match-name">“Sara” • Member since 2024</div>
+                <div class="match-meta">Requests NOK 80 000 • 24 months</div>
+                <div class="match-chip red">Defined purpose • Signed contract</div>
               </div>
               <div class="match-col">
                 <div class="match-label">Lender</div>
-                <div class="match-name">Henrik • Verified lender</div>
-                <div class="match-meta">Expected return 7.2% p.a.</div>
-                <div class="match-chip">Diversified • 14 active loans</div>
+                <div class="match-name">“Henrik” • Verified member</div>
+                <div class="match-meta">Fixed rate • Quarterly overview</div>
+                <div class="match-chip">Diversified • Several active loans</div>
               </div>
             </div>
+
             <div class="risk-row">
-              <div class="risk-label">Risk / reward profile</div>
-              <div class="risk-meter">
+              <span class="risk-label">Risk / reward profile (illustrative only)</span>
+              <div class="risk-meter" aria-hidden="true">
                 <div class="risk-fill"></div>
               </div>
             </div>
-            <div class="trust-bar">
-              <span>All activity is logged and visible to both sides.</span>
-              <div class="trust-dots">
+
+            <div class="trust-row">
+              <span>Agreement, payment history and all messages are visible to both sides.</span>
+              <div class="trust-dots" aria-hidden="true">
                 <div class="dot active"></div>
                 <div class="dot active"></div>
                 <div class="dot"></div>
               </div>
+            </div>
+
+            <p class="hero-footnote">
+              Lending and borrowing money involves risk, including potential loss of capital. The example above is for illustration only and is not a recommendation.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="shell">
+        <div class="trust-bar" aria-label="Trust foundations">
+          <div class="trust-label-main">
+            <span class="trust-dot-main"></span>
+            <span style="font-weight:500;color:#e5e7eb;">Built for people who treat private lending as seriously as any other contract.</span>
+          </div>
+          <div class="trust-items">
+            <div>
+              <div class="trust-item-label">Verified identities</div>
+              <div class="trust-item-sub">No anonymous profiles or “throwaway” users.</div>
+            </div>
+            <div>
+              <div class="trust-item-label">Documented terms</div>
+              <div class="trust-item-sub">Written agreements and clear schedules, per loan.</div>
+            </div>
+            <div>
+              <div class="trust-item-label">Shared history</div>
+              <div class="trust-item-sub">The same facts visible to both sides at all times.</div>
             </div>
           </div>
         </div>
@@ -790,93 +1173,173 @@
       <div class="shell">
         <div class="section-header">
           <div class="section-label">How it works</div>
-          <h2 class="section-title">A structured process between people, not chaos between strangers.</h2>
+          <h2 class="section-title">From informal promises to documented private agreements.</h2>
           <p class="section-text">
-            Amicbridge is a curated network. Every member is verified, every agreement is documented, and every payment flow is transparent.
-            Here’s what happens when you join.
+            Many people already lend and borrow privately – usually via messages and memory. Amicbridge keeps the human connection, but adds identity checks, written terms and a clear process.
           </p>
         </div>
 
-        <div class="steps-grid">
+        <div class="steps-grid" aria-label="Four main steps">
           <div class="step">
             <div class="step-num">1</div>
-            <div class="step-title">Join and verify</div>
+            <div class="step-title">Apply and verify</div>
             <div class="step-text">
-              Create an account, confirm your identity, and tell us whether you want to lend, borrow, or both.
+              Apply as a borrower, lender or both. We request identity information and basic details to understand who you are and how you plan to use the network.
             </div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
-            <div class="step-title">Set your preferences</div>
+            <div class="step-title">Set your limits</div>
             <div class="step-text">
-              Define how much you want to borrow or lend, time horizon, and your tolerance for risk.
+              Define amounts, time frames and how much risk you are prepared to take. You never see “random” offers outside the boundaries you set.
             </div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
-            <div class="step-title">We match inside the network</div>
+            <div class="step-title">Receive curated proposals</div>
             <div class="step-text">
-              Based on your profile, we suggest matches with other members. You always see terms up front.
+              Within the network, you are presented with potential relationships that match your profile. Both sides can review each other and the proposed terms before committing.
             </div>
           </div>
           <div class="step">
             <div class="step-num">4</div>
-            <div class="step-title">Sign and track</div>
+            <div class="step-title">Sign and follow the plan</div>
             <div class="step-text">
-              Agreements are signed digitally, payments are monitored, and you can track everything in one dashboard.
+              You sign a digital agreement and follow a defined payment schedule. All payments and messages are recorded in one shared place.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Safety -->
+    <!-- Safety & structure -->
     <section id="safety">
       <div class="shell two-col">
         <div>
           <div class="section-header">
-            <div class="section-label">Safety & trust</div>
-            <h2 class="section-title">Trust is the real currency. We treat it like capital.</h2>
+            <div class="section-label">Safety & structure</div>
+            <h2 class="section-title">We are not a bank. We are the framework between people.</h2>
             <p class="section-text">
-              Amicbridge is designed for people who take money seriously. We combine identity checks, structured agreements,
-              and transparent data so everyone understands what they are agreeing to.
+              Amicbridge does not take deposits or guarantee returns. Our role is to provide a controlled environment where two adults can define, document and follow a private loan agreement with less friction and less confusion.
             </p>
           </div>
 
-          <div class="card">
-            <h3>What we do for safety</h3>
+          <article class="card">
+            <h3>What Amicbridge provides</h3>
             <ul class="bullet-list">
-              <li>Verify the identity of all members before they join the network.</li>
-              <li>Require written, digital agreements for every loan relationship.</li>
-              <li>Use secure, encrypted connections for all communication and data.</li>
-              <li>Provide clear documentation of terms, payment schedules, and obligations.</li>
+              <li>Identity checks on all members before they are allowed into the network.</li>
+              <li>Guidance to define and document the key terms of each loan: amount, interest, schedule and handling of delays.</li>
+              <li>A shared digital overview where both sides see the same agreement, payment history and communication.</li>
+              <li>Encrypted connections and access control for all account activity.</li>
             </ul>
             <div class="pill-strip">
               <div class="pill-soft">Identity verification</div>
-              <div class="pill-soft">Digital agreements</div>
-              <div class="pill-soft">Secure data</div>
+              <div class="pill-soft">Documented agreements</div>
+              <div class="pill-soft">Shared oversight</div>
             </div>
-            <p style="margin-top:0.7rem;font-size:0.8rem;color:#6b7280;">
-              Amicbridge is a matchmaking network, not a bank. We do not guarantee returns or repayment. Members must always
-              assess their own risk and, where necessary, seek independent legal and financial advice.
+            <p style="margin-top:0.7rem;font-size:0.8rem;color:var(--muted-2);">
+              Amicbridge does not replace independent legal or financial advice. Lending and borrowing always carries risk, including the risk of non-payment.
+              Each member must assess their own situation and, where appropriate, consult professionals.
             </p>
-          </div>
+          </article>
         </div>
 
-        <div class="card">
-          <h3>Why members trust Amicbridge</h3>
+        <aside class="card">
+          <h3>Why members are willing to pay for access</h3>
           <p>
-            Our members are willing to pay to access the network because it reduces the chaos and guesswork that usually comes
-            with private lending between people.
+            Members do not pay for “more noise”. They pay for fewer surprises, clear agreements and less time managing private loans through chat logs and memory.
           </p>
           <ul class="bullet-list">
-            <li>Borrowers get access to serious lenders, not random strangers.</li>
-            <li>Lenders see structured information, not vague promises.</li>
-            <li>Both sides see the same data, the same terms, and the same schedule.</li>
+            <li>Borrowers get access to lenders who take structure and documentation seriously from the start.</li>
+            <li>Lenders see clear information about purpose, horizon and obligations – not vague promises.</li>
+            <li>Both sides can rely on the same written agreement and full history if questions or disagreements appear later.</li>
           </ul>
-          <p style="margin-top:0.6rem;font-size:0.86rem;color:#e5e7eb;">
-            The result: less “trust me bro”, more “we both signed this and can see the history”.
+          <p style="margin-top:0.7rem;font-size:0.86rem;color:#e5e7eb;">
+            A closed, paid network deliberately raises the bar. The goal is fewer, better relationships – not maximum volume.
           </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Compliance / legal framing -->
+    <section id="compliance">
+      <div class="shell">
+        <div class="section-header">
+          <div class="section-label">Regulation & compliance</div>
+          <h2 class="section-title">Clear about what we are – and what we are not.</h2>
+          <p class="section-text">
+            Trust also means being clear about our role. Amicbridge is a private network and digital tool. It is not a bank,
+            not an investment fund and not a debt collection agency.
+          </p>
+        </div>
+
+        <div class="compliance-strip">
+          <div class="compliance-item">
+            <div class="compliance-label">Our role</div>
+            <div class="compliance-text">
+              We provide identity checks, documentation tools and a controlled environment for private agreements between individuals.
+              The legal agreement is always between lender and borrower.
+            </div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-label">Regulatory context</div>
+            <div class="compliance-text">
+              Amicbridge will operate in line with applicable laws in [your country / region], including consumer protection and data protection rules.
+              Registration and license details will be shown here when available.
+            </div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-label">Risk & responsibility</div>
+            <div class="compliance-text">
+              Lending and borrowing can lead to financial loss. We do not guarantee returns or outcomes. Members are responsible
+              for their own decisions and for seeking independent advice where needed.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" aria-labelledby="test-heading">
+      <div class="shell">
+        <div class="section-header">
+          <div class="section-label">Member perspectives</div>
+          <h2 id="test-heading" class="section-title">The kind of value people expect from a serious network.</h2>
+          <p class="section-text">
+            The examples below are anonymised and illustrative, based on how people typically describe structured private lending.
+            They are not quotes from live clients, but they show the behaviour Amicbridge is designed for.
+          </p>
+        </div>
+
+        <div class="test-grid">
+          <article class="test-card">
+            <p class="test-quote">
+              “We used to write ‘I’ll pay you back next month’ in a chat. Now we agree on dates, amounts and consequences in writing.
+              It feels healthier for both sides.”
+            </p>
+            <div class="test-person">
+              <span class="test-name">“Anders”</span>
+              <span class="test-role">Private lender</span>
+            </div>
+          </article>
+          <article class="test-card">
+            <p class="test-quote">
+              “Seeing the entire repayment plan in one place reduces stress. I know exactly what I have promised and what is coming up.”
+            </p>
+            <div class="test-person">
+              <span class="test-name">“Marit”</span>
+              <span class="test-role">Borrower</span>
+            </div>
+          </article>
+          <article class="test-card">
+            <p class="test-quote">
+              “The membership fee is a filter. If someone is not willing to pay a little for structure, I am not comfortable lending them anything.”
+            </p>
+            <div class="test-person">
+              <span class="test-name">“Erlend”</span>
+              <span class="test-role">Lender</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -886,48 +1349,58 @@
       <div class="shell">
         <div class="section-header">
           <div class="section-label">Pricing</div>
-          <h2 class="section-title">A paid network that keeps the noise out.</h2>
+          <h2 class="section-title">A paid network, by design.</h2>
           <p class="section-text">
-            Amicbridge is intentionally not free. The membership fee filters out unserious activity and helps fund verification,
-            support, and continued development of the platform.
+            The membership fee exists to support verification, support and product development – and to ensure that the network is used
+            by people who value structure over quick, anonymous money.
           </p>
         </div>
 
         <div class="pricing-grid">
-          <div class="price-card">
-            <span class="badge-small">Borrower membership</span>
-            <div class="price-tag">NOK 149 <span>/ month</span></div>
-            <p class="section-text" style="margin-top:0.2rem;">
-              For individuals who want structured access to private lenders.
-            </p>
-            <ul class="price-list">
-              <li>Access to the borrower request flow.</li>
-              <li>Guided creation of loan requests and terms.</li>
-              <li>Digital agreements and payment schedule overview.</li>
-              <li>Messaging with matched lenders inside the platform.</li>
-            </ul>
-            <button class="btn btn-secondary" style="width:100%;">Request to borrow</button>
-          </div>
+          <article class="price-card">
+            <div class="price-inner">
+              <span class="badge-small">Borrower membership</span>
+              <div class="price-tag">NOK 149 <span>/ month (example)</span></div>
+              <p class="price-copy">
+                For individuals who want access to responsible private lenders with written agreements and clear plans.
+              </p>
+              <ul class="price-list">
+                <li>Create structured loan requests with guidance on key terms.</li>
+                <li>Access to the internal network of verified lenders.</li>
+                <li>Digital agreements with clear payment schedules and reminders.</li>
+                <li>Overview of your private loans in one place.</li>
+              </ul>
+              <button class="btn btn-secondary" style="width:100%;" type="button" id="btn-borrow-pricing">
+                Request to borrow
+              </button>
+              <p class="guarantee-text">
+                Membership can be cancelled for future periods. Existing agreements remain active until completed, according to their terms.
+              </p>
+            </div>
+          </article>
 
-          <div class="price-card highlight">
-            <span class="badge-small">Lender membership</span>
-            <div class="price-tag">NOK 349 <span>/ month</span></div>
-            <p class="section-text" style="margin-top:0.2rem;">
-              For individuals who want to lend money carefully, with better information.
-            </p>
-            <ul class="price-list">
-              <li>Access to curated borrower opportunities.</li>
-              <li>Overview of risk, time horizon, and repayment terms.</li>
-              <li>Portfolio view of all active and past loans.</li>
-              <li>Priority support for disputes and questions.</li>
-            </ul>
-            <button class="btn btn-primary" style="width:100%;">Apply as a lender</button>
-          </div>
+          <article class="price-card highlight">
+            <div class="price-inner">
+              <span class="badge-small">Lender membership</span>
+              <div class="price-tag">NOK 349 <span>/ month (example)</span></div>
+              <p class="price-copy">
+                For private individuals who want to lend money carefully, with more information, documentation and structure.
+              </p>
+              <ul class="price-list">
+                <li>Access to curated borrower requests within your limits.</li>
+                <li>Portfolio view of active and completed loans.</li>
+                <li>Tools for tracking payments and documenting communication.</li>
+                <li>Priority responses from support on questions related to the platform.</li>
+              </ul>
+              <button class="btn btn-primary" style="width:100%;" type="button" id="btn-lend-pricing">
+                Apply as a lender
+              </button>
+              <p class="guarantee-text">
+                Prices and features shown here are examples. Final terms depend on how Amicbridge is implemented and regulated in your country.
+              </p>
+            </div>
+          </article>
         </div>
-
-        <p style="margin-top:1rem;font-size:0.8rem;color:#6b7280;">
-          Prices and features are examples only. Adjust to match your real business model and regulatory requirements.
-        </p>
       </div>
     </section>
 
@@ -936,54 +1409,113 @@
       <div class="shell">
         <div class="section-header">
           <div class="section-label">Questions</div>
-          <h2 class="section-title">Frequently asked questions</h2>
+          <h2 class="section-title">Frequently asked questions.</h2>
           <p class="section-text">
-            Straight answers to the things people worry about before joining a network that deals with money.
+            Clear questions deserve clear answers – especially when money and trust are involved.
           </p>
         </div>
 
         <div class="faq-grid">
           <div class="faq-item">
-            <div class="faq-q">Is Amicbridge a bank?</div>
+            <div class="faq-q">Is Amicbridge a bank or financial advisor?</div>
             <div class="faq-a">
-              No. Amicbridge is a private network that connects people who want to lend and borrow money. We do not take deposits
-              or guarantee returns. We focus on matchmaking, structure, and transparency.
+              No. Amicbridge is a private network and a digital tool for documentation and structure. We do not hold deposits,
+              we do not provide individual investment advice and we do not guarantee returns.
             </div>
           </div>
           <div class="faq-item">
             <div class="faq-q">What happens if someone does not repay?</div>
             <div class="faq-a">
-              The agreement between lender and borrower is a contract between those parties. Amicbridge can provide documentation
-              and history of payments, but does not act as a debt collector. Members should always assess their own risk.
+              The legal relationship is always between lender and borrower. Amicbridge can provide documentation and history of the agreement,
+              but we are not a debt collection agency. You should consider how you would handle a default before entering any loan.
             </div>
           </div>
           <div class="faq-item">
-            <div class="faq-q">How do you verify people?</div>
+            <div class="faq-q">How are members verified?</div>
             <div class="faq-a">
-              We require identity information and supporting documentation from every member before they join the network. Details
-              depend on jurisdiction and may change as regulations evolve.
+              We request identity information and supporting documentation based on jurisdiction and regulation. Details of the process may change
+              as regulatory expectations develop, and will be described in our membership terms.
             </div>
           </div>
           <div class="faq-item">
-            <div class="faq-q">Is my data safe?</div>
+            <div class="faq-q">How is my data handled?</div>
             <div class="faq-a">
-              We use encrypted connections and limit access to only what is necessary to operate the platform. See our Privacy Policy
-              for detailed information once it is published.
+              We use encrypted connections and access control to protect accounts. Data use, storage and retention periods are specified in our
+              Privacy Policy, which should be read carefully before you join.
             </div>
           </div>
           <div class="faq-item">
             <div class="faq-q">Can I cancel my membership?</div>
             <div class="faq-a">
-              Yes, you can cancel future billing at any time. Existing contracts between you and other members remain valid and must
-              be handled according to the agreement terms.
+              You can cancel future membership payments according to the terms you accept on sign-up. Agreements you have already entered into
+              remain valid and must be handled as agreed with the other party.
             </div>
           </div>
           <div class="faq-item">
-            <div class="faq-q">Do I need legal or financial advice?</div>
+            <div class="faq-q">Do I still need my own lawyer or advisor?</div>
             <div class="faq-a">
-              Lending and borrowing money always carries risk. We strongly recommend that you consider independent legal and financial
-              advice before entering into any agreement.
+              Yes. Amicbridge is a tool, not a replacement for independent legal or financial advice. We strongly recommend that you consider
+              professional advice before entering into any loan relationship.
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="shell">
+        <div class="section-header">
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Talk to us about membership or collaboration.</h2>
+          <p class="section-text">
+            Use this form for questions about the concept, membership or potential cooperation. When the platform is live, onboarding and applications
+            will be handled through secure, dedicated flows.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <p class="contact-small">
+              Do not send full ID numbers or other highly sensitive information through this form. Once your account is created,
+              we will provide secure channels for required documentation.
+            </p>
+
+            <form class="contact-form" method="post" action="#">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+              </div>
+              <div class="field">
+                <label for="type">Are you mainly interested in lending or borrowing?</label>
+                <input id="type" name="type" type="text" placeholder="Lending, borrowing, or both">
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Briefly describe your situation or what you want to explore."></textarea>
+                <small>This form is for general contact only. It does not create a loan agreement or membership.</small>
+              </div>
+              <button class="btn btn-secondary" type="submit">Send message</button>
+            </form>
+          </div>
+
+          <div style="font-size:0.86rem;color:var(--muted);display:flex;flex-direction:column;gap:0.6rem;">
+            <p>
+              Amicbridge is built for people who think private lending should be handled with the same respect as any other contract:
+              clear terms, clear expectations and a written record of what was agreed.
+            </p>
+            <p>
+              If that matches how you already operate – or how you would like to operate – we are interested in hearing from you,
+              whether you plan to borrow, lend or help us make the network stronger.
+            </p>
+            <p class="footer-legal">
+              Company details, registration numbers and regulatory references will be displayed here when Amicbridge is formally established
+              and authorised in the relevant jurisdiction.
+            </p>
           </div>
         </div>
       </div>
@@ -992,21 +1524,84 @@
 
   <footer>
     <div class="shell footer-row">
-      <div>
-        © <span id="year"></span> Amicbridge. All rights reserved.
+      <div class="footer-col">
+        <div class="footer-topline">
+          Amicbridge is a private network and digital tool for documented lending and borrowing between individuals.
+        </div>
+        <div>© <span id="year"></span> Amicbridge. All rights reserved.</div>
       </div>
-      <div class="footer-links">
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Contact</a>
+      <div class="footer-col">
+        <div class="footer-links">
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-legal">
+          This website does not constitute financial advice, an offer of securities or a recommendation to lend or borrow.
+          Before operating such a service, you must ensure compliance with all relevant laws and regulatory requirements in your country.
+        </div>
       </div>
     </div>
   </footer>
 </div>
 
 <script>
-  // set current year
+  // Set current year
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  function openContactWithType(typeText) {
+    var typeField = document.getElementById("type");
+    var contactSection = document.getElementById("contact");
+
+    if (typeField) {
+      typeField.value = typeText;
+      typeField.focus();
+    }
+
+    if (contactSection && contactSection.scrollIntoView) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  // Nav apply button goes to contact, neutral type
+  var btnApplyNav = document.getElementById("btn-apply-nav");
+  if (btnApplyNav) {
+    btnApplyNav.addEventListener("click", function () {
+      openContactWithType("");
+    });
+  }
+
+  // Hero buttons
+  var btnBorrowHero = document.getElementById("btn-borrow-hero");
+  var btnLendHero = document.getElementById("btn-lend-hero");
+
+  if (btnBorrowHero) {
+    btnBorrowHero.addEventListener("click", function () {
+      openContactWithType("Borrowing");
+    });
+  }
+
+  if (btnLendHero) {
+    btnLendHero.addEventListener("click", function () {
+      openContactWithType("Lending");
+    });
+  }
+
+  // Pricing buttons
+  var btnBorrowPricing = document.getElementById("btn-borrow-pricing");
+  var btnLendPricing = document.getElementById("btn-lend-pricing");
+
+  if (btnBorrowPricing) {
+    btnBorrowPricing.addEventListener("click", function () {
+      openContactWithType("Borrowing");
+    });
+  }
+
+  if (btnLendPricing) {
+    btnLendPricing.addEventListener("click", function () {
+      openContactWithType("Lending");
+    });
+  }
 </script>
 </body>
 </html>
