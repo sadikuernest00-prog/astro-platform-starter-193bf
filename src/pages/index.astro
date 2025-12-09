@@ -1,14 +1,13 @@
 ---
-// You can add SEO data here if you use a layout later
 const products = [
   {
     id: "roasted-hazelnut",
     name: "Lindt Excellence Dark Roasted Hazelnut Bar 100g",
     description:
       "Smooth dark chocolate with crunchy roasted hazelnut pieces. Perfect balance between rich cocoa and nutty sweetness.",
-    price: "€3.90",
-    oldPrice: "€4.50",
-    badge: "-13%",
+    price: "250 NOK",
+    oldPrice: "",
+    badge: "New",
     weight: "100g",
     cocoa: "Excellence · Dark",
     image: "/images/lindt-dark-roasted-hazelnut-100g.png"
@@ -18,9 +17,9 @@ const products = [
     name: "Lindt Excellence Dark Cranberry, Hazelnut & Almond Bar 100g",
     description:
       "Fine dark chocolate with fruity cranberries and roasted hazelnuts & almonds for a layered, crunchy taste.",
-    price: "€3.90",
-    oldPrice: "€5.20",
-    badge: "-25%",
+    price: "250 NOK",
+    oldPrice: "",
+    badge: "Popular choice",
     weight: "100g",
     cocoa: "Excellence · Dark",
     image: "/images/lindt-dark-cranberry-hazelnut-almond-100g.png"
@@ -30,7 +29,7 @@ const products = [
     name: "Lindt Excellence Dark Sea Salt Bar 100g",
     description:
       "Elegant dark chocolate with a touch of hand-harvested sea salt that lifts the cocoa notes and adds a delicate crunch.",
-    price: "€3.90",
+    price: "250 NOK",
     oldPrice: "",
     badge: "Bestseller",
     weight: "100g",
@@ -42,9 +41,9 @@ const products = [
     name: "Lindt LES GRANDES Milk Caramel Hazelnut 150g",
     description:
       "Generous Swiss milk chocolate filled with whole hazelnuts and caramel pieces. Extra-thick and indulgent.",
-    price: "€4.90",
-    oldPrice: "€7.00",
-    badge: "-30%",
+    price: "250 NOK",
+    oldPrice: "",
+    badge: "Limited stock",
     weight: "150g",
     cocoa: "Les Grandes · Milk",
     image: "/images/lindt-les-grandes-milk-caramel-hazelnut-150g.png"
@@ -98,7 +97,7 @@ const products = [
             <div class="hero__trust-row">
               <div class="pill">✔ 100% authentic Lindt products</div>
               <div class="pill">✔ Secure payments</div>
-              <div class="pill">✔ Fast EU shipping</div>
+              <div class="pill">✔ Fast EU/EEA shipping</div>
             </div>
             <p class="hero__note">
               *During warm seasons we use insulated packaging for long routes.
@@ -130,7 +129,7 @@ const products = [
         <div class="container">
           <div class="section-header">
             <h2>Lindt chocolate we stock right now</h2>
-            <p>Limited selection, carefully chosen bestsellers that ship well.</p>
+            <p>Small curated selection, all at 250 NOK per bar.</p>
           </div>
 
           <div class="products-grid">
@@ -153,9 +152,6 @@ const products = [
                   <div class="product-card__footer">
                     <div class="product-card__price-wrap">
                       <span class="product-card__price">{product.price}</span>
-                      {product.oldPrice && (
-                        <span class="product-card__old-price">{product.oldPrice}</span>
-                      )}
                     </div>
                     <button class="btn btn--primary btn--small">
                       Add to cart
@@ -755,12 +751,6 @@ const products = [
     font-size: 1rem;
   }
 
-  .product-card__old-price {
-    font-size: 0.8rem;
-    color: #a25a3d;
-    text-decoration: line-through;
-  }
-
   .product-card__trust {
     margin: 0.4rem 0 0;
     font-size: 0.75rem;
@@ -943,7 +933,7 @@ const products = [
     }
 
     .nav {
-      display: none; /* simple mobile version – could add a burger menu later */
+      display: none;
     }
 
     .hero {
