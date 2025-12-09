@@ -1,708 +1,953 @@
-<!DOCTYPE html>
+---
+// You can add SEO data here if you use a layout later
+const products = [
+  {
+    id: "roasted-hazelnut",
+    name: "Lindt Excellence Dark Roasted Hazelnut Bar 100g",
+    description:
+      "Smooth dark chocolate with crunchy roasted hazelnut pieces. Perfect balance between rich cocoa and nutty sweetness.",
+    price: "€3.90",
+    oldPrice: "€4.50",
+    badge: "-13%",
+    weight: "100g",
+    cocoa: "Excellence · Dark",
+    image: "/images/lindt-dark-roasted-hazelnut-100g.png"
+  },
+  {
+    id: "cranberry-hazelnut-almond",
+    name: "Lindt Excellence Dark Cranberry, Hazelnut & Almond Bar 100g",
+    description:
+      "Fine dark chocolate with fruity cranberries and roasted hazelnuts & almonds for a layered, crunchy taste.",
+    price: "€3.90",
+    oldPrice: "€5.20",
+    badge: "-25%",
+    weight: "100g",
+    cocoa: "Excellence · Dark",
+    image: "/images/lindt-dark-cranberry-hazelnut-almond-100g.png"
+  },
+  {
+    id: "sea-salt",
+    name: "Lindt Excellence Dark Sea Salt Bar 100g",
+    description:
+      "Elegant dark chocolate with a touch of hand-harvested sea salt that lifts the cocoa notes and adds a delicate crunch.",
+    price: "€3.90",
+    oldPrice: "",
+    badge: "Bestseller",
+    weight: "100g",
+    cocoa: "Excellence · Dark",
+    image: "/images/lindt-dark-sea-salt-100g.png"
+  },
+  {
+    id: "les-grandes-caramel-hazelnut",
+    name: "Lindt LES GRANDES Milk Caramel Hazelnut 150g",
+    description:
+      "Generous Swiss milk chocolate filled with whole hazelnuts and caramel pieces. Extra-thick and indulgent.",
+    price: "€4.90",
+    oldPrice: "€7.00",
+    badge: "-30%",
+    weight: "150g",
+    cocoa: "Les Grandes · Milk",
+    image: "/images/lindt-les-grandes-milk-caramel-hazelnut-150g.png"
+  }
+];
+---
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>AmicBridge – A private bridge between borrowers, lenders and business partners</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AmicBridge is a private peer-to-peer network. We connect people who want to lend, borrow or invest on their own terms, with a strong focus on identity, clarity and trust.">
-  <style>
-    :root {
-      --bg: #f5f5f7;
-      --surface: #ffffff;
-      --border: #e5e7eb;
-      --text-main: #111827;
-      --text-sub: #4b5563;
-      --text-muted: #6b7280;
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --radius-lg: 12px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
-      --max-width: 1000px;
+  <head>
+    <meta charset="UTF-8" />
+    <title>AmicBridge Chocolate Boutique – Finest Lindt Bars</title>
+    <meta
+      name="description"
+      content="Trusted online shop for genuine Lindt chocolate bars – dark, sea salt, cranberry and hazelnut selections. Secure checkout and fast shipping."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="container top-bar__inner">
+        <div class="logo">
+          <span class="logo__mark">AB</span>
+          <span class="logo__text">AmicBridge Chocolate</span>
+        </div>
+        <nav class="nav">
+          <a href="#products">Shop</a>
+          <a href="#why-trust">Why trust us</a>
+          <a href="#shipping">Shipping</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__text">
+            <h1>
+              Genuine Lindt<span class="hero__accent">. Delivered with care.</span>
+            </h1>
+            <p>
+              Premium Swiss chocolate bars straight from verified suppliers to your
+              door. Temperature-protected packaging, clear expiry dates and a
+              no-melt guarantee*.
+            </p>
+            <div class="hero__actions">
+              <a href="#products" class="btn btn--primary">Shop Lindt Bars</a>
+              <a href="#why-trust" class="btn btn--ghost">Why people trust us</a>
+            </div>
+            <div class="hero__trust-row">
+              <div class="pill">✔ 100% authentic Lindt products</div>
+              <div class="pill">✔ Secure payments</div>
+              <div class="pill">✔ Fast EU shipping</div>
+            </div>
+            <p class="hero__note">
+              *During warm seasons we use insulated packaging for long routes.
+            </p>
+          </div>
+          <div class="hero__highlight">
+            <div class="hero-card">
+              <p class="hero-card__label">Today’s favourite</p>
+              <img
+                src={products[2].image}
+                alt={products[2].name}
+                class="hero-card__image"
+              />
+              <div class="hero-card__info">
+                <h2>{products[2].name}</h2>
+                <p>{products[2].description}</p>
+                <div class="hero-card__bottom">
+                  <span class="price">{products[2].price}</span>
+                  <button class="btn btn--small">Add to cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT GRID -->
+      <section id="products" class="section section--light">
+        <div class="container">
+          <div class="section-header">
+            <h2>Lindt chocolate we stock right now</h2>
+            <p>Limited selection, carefully chosen bestsellers that ship well.</p>
+          </div>
+
+          <div class="products-grid">
+            {products.map((product) => (
+              <article class="product-card" id={product.id}>
+                {product.badge && <span class="product-card__badge">{product.badge}</span>}
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class="product-card__image"
+                  loading="lazy"
+                />
+                <div class="product-card__body">
+                  <p class="product-card__cocoa">{product.cocoa}</p>
+                  <h3 class="product-card__title">{product.name}</h3>
+                  <p class="product-card__description">{product.description}</p>
+                  <div class="product-card__meta">
+                    <span class="product-card__weight">{product.weight}</span>
+                  </div>
+                  <div class="product-card__footer">
+                    <div class="product-card__price-wrap">
+                      <span class="product-card__price">{product.price}</span>
+                      {product.oldPrice && (
+                        <span class="product-card__old-price">{product.oldPrice}</span>
+                      )}
+                    </div>
+                    <button class="btn btn--primary btn--small">
+                      Add to cart
+                    </button>
+                  </div>
+                  <p class="product-card__trust">
+                    Always shipped in original sealed Lindt packaging with visible best
+                    before date.
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST / WHY US -->
+      <section id="why-trust" class="section section--dark">
+        <div class="container">
+          <div class="section-header section-header--center">
+            <h2>Why people feel safe ordering from AmicBridge</h2>
+            <p>
+              You’re not buying “mystery chocolate from the internet”. You’re buying
+              from a small shop obsessed with doing things properly.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3>Verified suppliers only</h3>
+              <p>
+                We source our Lindt bars from official distributors within the EU/EEA.
+                No grey-market stock, no re-wrapped products.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Food-safe handling</h3>
+              <p>
+                Stored in dry, temperature-controlled conditions. During warm months we
+                ship with extra protection so your chocolate arrives as a bar, not a
+                puddle.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Transparent labeling</h3>
+              <p>
+                Ingredients, allergens and expiry dates are always clearly shown on the
+                product photos and in your order confirmation.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Secure checkout</h3>
+              <p>
+                Encrypted payment, no card details stored on our servers. You get order
+                tracking from the moment we hand the parcel to the courier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SHIPPING & RETURNS -->
+      <section id="shipping" class="section section--light">
+        <div class="container">
+          <div class="section-header">
+            <h2>Shipping & returns</h2>
+            <p>Clear rules, no surprises.</p>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Where we ship</h3>
+              <p>
+                We currently ship within the EU/EEA. Delivery times are usually{" "}
+                <strong>2–5 business days</strong> depending on your country.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Heat-safe packing</h3>
+              <p>
+                When the forecast is warm, we upgrade packaging for temperature
+                protection on longer routes. For local deliveries we minimize plastic
+                and use recycled cardboard.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Freshness guarantee</h3>
+              <p>
+                Your bars will have at least <strong>60 days</strong> before their “best
+                before” date on the day we ship. If a product arrives damaged, contact
+                us with a photo and we’ll fix it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOCIAL PROOF -->
+      <section class="section section--soft">
+        <div class="container">
+          <div class="section-header section-header--center">
+            <h2>What early customers say</h2>
+            <p>Real feedback from chocolate-powered humans.</p>
+          </div>
+
+          <div class="reviews-grid">
+            <div class="review-card">
+              <p class="review-card__rating">★★★★★</p>
+              <p class="review-card__text">
+                “Came in perfect condition even during a warm week. Sea Salt bar tasted
+                exactly like the ones I get in store.”
+              </p>
+              <p class="review-card__author">– Anna, repeat customer</p>
+            </div>
+            <div class="review-card">
+              <p class="review-card__rating">★★★★★</p>
+              <p class="review-card__text">
+                “Love the small selection – it feels curated, not overwhelming. The
+                Les Grandes bar is insanely good.”
+              </p>
+              <p class="review-card__author">– Markus</p>
+            </div>
+            <div class="review-card">
+              <p class="review-card__rating">★★★★☆</p>
+              <p class="review-card__text">
+                “Fast shipping and clear communication. Package looked premium enough to
+                gift straight away.”
+              </p>
+              <p class="review-card__author">– Elise</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section section--light">
+        <div class="container">
+          <div class="section-header section-header--center">
+            <h2>Questions before you taste?</h2>
+            <p>Some answers we give all the time.</p>
+          </div>
+          <div class="faq">
+            <div class="faq-item">
+              <h3>Are these bars really from Lindt?</h3>
+              <p>
+                Yes. We only buy sealed Lindt products from official distributors within
+                the EU/EEA. Packages are never opened or repacked by us.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>How do you handle allergies?</h3>
+              <p>
+                Ingredients and allergen information are visible on both the product
+                photos and in the description. Always read the original packaging when
+                you receive your order to double-check.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Can I return chocolate?</h3>
+              <p>
+                Because chocolate is a food product, we can’t resell opened items. If a
+                bar arrives damaged or clearly not as described, contact us within 7
+                days and we’ll sort a replacement or refund.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Do you comply with local food rules?</h3>
+              <p>
+                We follow EU/EEA food-safety and labeling rules for storage and
+                shipping. Make sure your own business registration and tax details are
+                also in order in your country.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <div class="logo">
+            <span class="logo__mark">AB</span>
+            <span class="logo__text">AmicBridge Chocolate</span>
+          </div>
+          <p class="footer__tagline">
+            A tiny online shop with a big respect for good chocolate and clear rules.
+          </p>
+        </div>
+        <div class="footer__cols">
+          <div>
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:support@amicbridge.com">support@amicbridge.com</a></p>
+            <p>Org. number / company info – add here</p>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <p><a href="#">Terms & Conditions</a></p>
+            <p><a href="#">Privacy policy</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container footer__bottom-inner">
+          <p>© {new Date().getFullYear()} AmicBridge. Lindt is a registered trademark of Lindt &amp; Sprüngli.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :root {
+    --bg-dark: #111217;
+    --bg-darker: #050509;
+    --bg-light: #f7f4f0;
+    --bg-soft: #fff8eb;
+    --accent-gold: #c99a3d;
+    --accent-soft-gold: #f2d28b;
+    --text-main: #181818;
+    --text-muted: #626262;
+    --white: #ffffff;
+    --border-subtle: #e2ddd7;
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.16);
+    --radius-lg: 18px;
+    --radius-xl: 26px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Top bar */
+  .top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: linear-gradient(to bottom, rgba(5, 5, 12, 0.96), rgba(5, 5, 12, 0.8));
+    backdrop-filter: blur(14px);
+    color: var(--white);
+  }
+
+  .top-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .logo__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: radial-gradient(circle at 0 0, #fbe1a6, #a47425);
+    color: #1a1105;
+    font-size: 0.8rem;
+  }
+
+  .logo__text {
+    font-size: 0.82rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .nav a {
+    position: relative;
+    padding-bottom: 0.15rem;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: linear-gradient(to right, var(--accent-gold), var(--accent-soft-gold));
+    transition: width 0.2s ease-out;
+  }
+
+  .nav a:hover::after {
+    width: 100%;
+  }
+
+  /* Hero */
+  .hero {
+    background: radial-gradient(circle at top left, #3b2b0d, #050509);
+    color: var(--white);
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero__text h1 {
+    font-size: clamp(2.3rem, 3vw + 1.6rem, 3.3rem);
+    margin: 0 0 1rem;
+    line-height: 1.1;
+  }
+
+  .hero__accent {
+    display: block;
+    font-weight: 400;
+    font-size: 0.9em;
+    color: var(--accent-soft-gold);
+  }
+
+  .hero__text p {
+    margin: 0.3rem 0 1.4rem;
+    color: rgba(255, 255, 255, 0.86);
+    max-width: 30rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .btn {
+    border-radius: 999px;
+    border: none;
+    padding: 0.8rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
+  }
+
+  .btn--primary {
+    background: linear-gradient(to right, #f8e1a8, #c99a3d);
+    color: #271503;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  }
+
+  .btn--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #f6eee1;
+  }
+
+  .btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .btn--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .hero__trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .pill {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(7, 7, 15, 0.5);
+  }
+
+  .hero__note {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .hero__highlight {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-card {
+    border-radius: var(--radius-xl);
+    background: radial-gradient(circle at top, #f8e1a8, #b2741b);
+    padding: 1.2rem;
+    box-shadow: var(--shadow-soft);
+    color: #2c1502;
+    max-width: 360px;
+  }
+
+  .hero-card__label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-card__image {
+    width: 100%;
+    border-radius: 16px;
+    background: #fff;
+    padding: 0.5rem 1rem 0.7rem;
+    object-fit: contain;
+  }
+
+  .hero-card__info h2 {
+    font-size: 1.1rem;
+    margin: 0.8rem 0 0.3rem;
+  }
+
+  .hero-card__info p {
+    font-size: 0.85rem;
+    margin: 0 0 0.7rem;
+  }
+
+  .hero-card__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section--light {
+    background: var(--bg-light);
+  }
+
+  .section--dark {
+    background: radial-gradient(circle at top, #2b2923, #050509);
+    color: var(--white);
+  }
+
+  .section--soft {
+    background: var(--bg-soft);
+  }
+
+  .section-header {
+    margin-bottom: 1.8rem;
+  }
+
+  .section-header h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.6rem;
+  }
+
+  .section-header p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .section-header--center {
+    text-align: center;
+  }
+
+  .section--dark .section-header p {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Products */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.6rem;
+  }
+
+  .product-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card__badge {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    background: #c99a3d;
+    color: #1e1204;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+  }
+
+  .product-card__image {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    background: radial-gradient(circle at top, #fffaf1, #f0e3cf);
+  }
+
+  .product-card__body {
+    padding: 0.9rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .product-card__cocoa {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #a07a32;
+  }
+
+  .product-card__title {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .product-card__description {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .product-card__meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .product-card__footer {
+    margin-top: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-card__price-wrap {
+    display: flex;
+    gap: 0.35rem;
+    align-items: baseline;
+  }
+
+  .product-card__price {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .product-card__old-price {
+    font-size: 0.8rem;
+    color: #a25a3d;
+    text-decoration: line-through;
+  }
+
+  .product-card__trust {
+    margin: 0.4rem 0 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  /* Features / Trust */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.4rem;
+  }
+
+  .feature-card {
+    background: rgba(12, 12, 19, 0.9);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .feature-card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    color: var(--accent-soft-gold);
+  }
+
+  .feature-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  /* Info cards */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
+  }
+
+  .info-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .info-card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+  }
+
+  .info-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  /* Reviews */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
+  }
+
+  .review-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .review-card__rating {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: #c99a3d;
+  }
+
+  .review-card__text {
+    margin: 0 0 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .review-card__author {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* FAQ */
+  .faq {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    text-align: left;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .faq-item h3 {
+    margin: 0 0 0.4rem;
+    font-size: 0.98rem;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--bg-darker);
+    color: rgba(255, 255, 255, 0.9);
+    padding-top: 2rem;
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer__tagline {
+    max-width: 260px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.4rem;
+  }
+
+  .footer__cols {
+    display: flex;
+    gap: 2.5rem;
+    font-size: 0.85rem;
+  }
+
+  .footer__cols h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.92rem;
+  }
+
+  .footer__cols p {
+    margin: 0.1rem 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .footer__cols a {
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.7rem 0;
+    background: #050509;
+  }
+
+  .footer__bottom-inner {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Responsive */
+  @media (max-width: 840px) {
+    .hero__inner {
+      grid-template-columns: minmax(0, 1fr);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    button { font-family: inherit; }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Header / nav */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+    .hero__highlight {
+      order: -1;
+      margin-bottom: 1.8rem;
     }
 
     .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.9rem 0;
+      display: none; /* simple mobile version – could add a burger menu later */
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-    }
-
-    .logo-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: #2563eb;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .logo-text {
-      font-weight: 600;
-      font-size: 0.98rem;
-      color: #111827;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 0.1rem;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.12rem;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: #2563eb;
-      transition: width 0.15s ease-out;
-    }
-
-    .nav-links a:hover::after { width: 100%; }
-
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.9rem;
-    }
-
-    .nav-cta a {
-      color: #2563eb;
-      font-weight: 500;
-    }
-
-    .nav-cta .btn-small {
-      padding: 0.45rem 0.95rem;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      background: #ffffff;
-      font-size: 0.85rem;
-      cursor: pointer;
-    }
-
-    .nav-cta .btn-small:hover { background: #f3f4f6; }
-
-    /* Hero */
 
     .hero {
-      background: var(--surface);
-      border-radius: 0 0 24px 24px;
-      box-shadow: var(--shadow-soft);
-      margin-top: 1.4rem;
-      margin-bottom: 2.2rem;
-      padding: 3rem 0 3.2rem;
-    }
-
-    .hero-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-    }
-
-    .hero-text { max-width: 680px; }
-
-    .hero-title {
-      font-size: clamp(2rem, 2.6vw + 1.2rem, 2.6rem);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .hero-body {
-      font-size: 0.98rem;
-      color: var(--text-sub);
-      line-height: 1.55;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.9rem;
-      margin-top: 1.6rem;
-    }
-
-    .btn-primary {
-      border-radius: var(--radius-pill);
-      border: none;
-      background: var(--primary);
-      color: #ffffff;
-      padding: 0.68rem 1.3rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn-primary:hover { background: var(--primary-hover); }
-
-    .btn-secondary {
-      border-radius: var(--radius-pill);
-      border: 1px solid #d1d5db;
-      background: #ffffff;
-      color: #111827;
-      padding: 0.68rem 1.3rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn-secondary:hover { background: #f9fafb; }
-
-    .btn-ghost {
-      border-radius: var(--radius-pill);
-      border: none;
-      background: transparent;
-      color: #2563eb;
-      padding: 0.68rem 0.8rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-footnote {
-      margin-top: 1.2rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      max-width: 640px;
-      line-height: 1.5;
-    }
-
-    /* Sections */
-
-    .section {
-      margin-bottom: 3rem;
-    }
-
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-text {
-      font-size: 0.95rem;
-      color: var(--text-sub);
-      margin-bottom: 1.2rem;
-    }
-
-    .card-simple {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 1.2rem 1.4rem 1.3rem;
-      box-shadow: var(--shadow-soft);
-      font-size: 0.93rem;
-      color: var(--text-sub);
-    }
-
-    .card-simple h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: var(--text-main);
-    }
-
-    .card-simple ul {
-      margin: 0.5rem 0 0 1.1rem;
-      padding: 0;
-    }
-
-    .card-simple li { margin-bottom: 0.25rem; }
-
-    /* Contact / form */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 2rem;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 1.4rem 1.4rem 1.5rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      margin-bottom: 0.9rem;
-      font-size: 0.9rem;
-    }
-
-    .field label {
-      color: #111827;
-      font-weight: 500;
-    }
-
-    .field input,
-    .field textarea,
-    .field select {
-      border-radius: 8px;
-      border: 1px solid #d1d5db;
-      padding: 0.55rem 0.7rem;
-      font-size: 0.9rem;
-      font-family: inherit;
-      resize: vertical;
-    }
-
-    .field input:focus,
-    .field textarea:focus,
-    .field select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
-    }
-
-    .field small {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .field-inline {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.9rem;
-    }
-
-    .checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.45rem;
-      font-size: 0.82rem;
-      color: var(--text-sub);
-      margin-top: 0.2rem;
-    }
-
-    .checkbox-row input {
-      margin-top: 0.15rem;
-    }
-
-    .form-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
-    }
-
-    .form-success {
-      display: none;
-      margin-top: 0.7rem;
-      font-size: 0.85rem;
-      color: #166534;
-      background: #ecfdf3;
-      border-radius: 8px;
-      padding: 0.6rem 0.75rem;
-      border: 1px solid #bbf7d0;
-    }
-
-    .form-success.visible { display: block; }
-
-    .side-note {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      line-height: 1.6;
-    }
-
-    .side-note strong {
-      display: block;
-      margin-bottom: 0.4rem;
-      color: #111827;
-    }
-
-    /* Footer */
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem 0 2rem;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      background: #f9fafb;
-      margin-top: auto;
-    }
-
-    footer .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.8rem;
-    }
-
-    footer a { color: #4b5563; }
-
-    /* Responsive */
-
-    @media (max-width: 880px) {
-      .contact-grid { grid-template-columns: minmax(0, 1fr); }
-    }
-
-    @media (max-width: 760px) {
-      .nav-links { display: none; }
-    }
-
-    @media (max-width: 640px) {
-      .hero {
-        border-radius: 0;
-        margin-top: 0.8rem;
-      }
-    }
-  </style>
-</head>
-<body>
-<div class="page">
-
-  <!-- Header -->
-  <header>
-    <div class="shell nav" aria-label="Main navigation">
-      <a href="#" class="logo">
-        <div class="logo-mark">A</div>
-        <div class="logo-text">AmicBridge</div>
-      </a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#trust">Trust &amp; profile</a>
-        <a href="#business">Business &amp; profit sharing</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav-cta">
-        <a href="#contact">Sign in</a>
-        <button class="btn-small" type="button" id="btn-join-nav">Join the network</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main>
-    <section class="hero" id="about">
-      <div class="shell hero-inner">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            A private, trusted bridge between borrowers, lenders and business partners.
-          </h1>
-          <p class="hero-body">
-            AmicBridge is a private network that connects people who want to lend and borrow money on
-            their own terms. We don’t control the deal – we help you find real people who could become
-            valuable financial partners for the future, whether that is through lending, shared profit,
-            or long-term business collaboration.
-          </p>
-
-          <div class="hero-actions">
-            <button class="btn-primary" type="button" id="btn-request-loan">
-              Request a loan
-            </button>
-            <button class="btn-secondary" type="button" id="btn-offer-lending">
-              Offer lending
-            </button>
-            <button class="btn-ghost" type="button" id="btn-business-invest">
-              Seek business investment / share profit
-            </button>
-          </div>
-
-          <p class="hero-footnote">
-            AmicBridge never holds funds or crypto, never signs loan or investment contracts, and never guarantees
-            repayment, returns or matches. All agreements and transfers happen directly between members, who must
-            make their own decisions, assessments and compliance checks.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trust & profile -->
-    <section class="section" id="trust">
-      <div class="shell">
-        <h2 class="section-title">Trust first. Money second.</h2>
-        <p class="section-text">
-          Before anyone thinks about sending money, AmicBridge focuses on who the person is and how clearly
-          they explain their plans. The idea is simple: serious people are happy to be transparent.
-        </p>
-
-        <div class="card-simple">
-          <h3>The AmicBridge trust profile (concept)</h3>
-          <ul>
-            <li><strong>Identity:</strong> real name and verified contact details. No anonymous borrowing.</li>
-            <li><strong>Purpose:</strong> a clear reason for the money – personal, emergency, business or investment.</li>
-            <li><strong>Repayment / sharing plan:</strong> how they plan to repay or share profit, in plain language.</li>
-            <li><strong>Income situation:</strong> basic information about work and how stable their income is.</li>
-            <li><strong>Agreement mindset:</strong> willingness to follow a written agreement and schedule.</li>
-          </ul>
-          <p style="margin-top:0.5rem;">
-            Over time, a member’s profile could also reflect completed agreements and good behaviour.
-            AmicBridge itself does not give a “credit score”, but it helps you see whether someone behaves
-            like a responsible partner.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Business investment section -->
-    <section class="section" id="business">
-      <div class="shell">
-        <h2 class="section-title">Business investment &amp; shared profit.</h2>
-        <p class="section-text">
-          Some members don’t just want a one-off loan – they want partners. AmicBridge can be used to find people
-          who are willing to invest in a business and share the profit (and risk) together in a clear, documented way.
-        </p>
-
-        <div class="card-simple">
-          <h3>What “shared profit” can look like on AmicBridge</h3>
-          <p>The exact structure depends on local law and what you agree together, but the idea is simple:</p>
-          <ul>
-            <li>One person (or group) needs investment for a business or project.</li>
-            <li>Another person (or group) brings capital as a partner, not just as a lender.</li>
-            <li>You agree on how profit will be shared and how losses are handled.</li>
-            <li>Those rules are written down in a contract outside the platform.</li>
-          </ul>
-          <p style="margin-top:0.5rem;">
-            AmicBridge helps you find each other, present your project in a structured way, and keep a record of who
-            you spoke to and what was discussed. It does <strong>not</strong> guarantee returns or provide legal, tax or investment advice.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact / request form -->
-    <section class="section" id="contact">
-      <div class="shell">
-        <h2 class="section-title">Send a request to join the network.</h2>
-        <p class="section-text">
-          Use this form to signal interest in AmicBridge – whether you mainly want to borrow, lend,
-          or find partners to invest in a business and share profit together.
-        </p>
-
-        <div class="contact-grid">
-          <div class="card">
-            <form id="contact-form" method="post" action="#">
-
-              <div class="field">
-                <label for="intent">I am mainly interested in</label>
-                <select id="intent" name="intent" required>
-                  <option value="">Select an option</option>
-                  <option value="Borrowing">Borrowing</option>
-                  <option value="Lending">Lending</option>
-                  <option value="Business investment / profit sharing">Business investment / profit sharing</option>
-                  <option value="Both">Both borrowing and lending / investing</option>
-                </select>
-              </div>
-
-              <div class="field field-inline">
-                <div>
-                  <label for="purpose">Purpose</label>
-                  <select id="purpose" name="purpose" required>
-                    <option value="">Select purpose</option>
-                    <option value="Personal">Personal</option>
-                    <option value="Emergency">Emergency</option>
-                    <option value="Business">Business</option>
-                    <option value="Investment">Investment</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <small>Why do you want to borrow, lend or invest?</small>
-                </div>
-                <div>
-                  <label for="currency">Preferred currency or crypto</label>
-                  <input id="currency" name="currency" type="text" placeholder="e.g. EUR, NOK, USD, BTC, USDT" />
-                  <small>Only for information. Transfers happen directly between members.</small>
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="income">Work / income situation</label>
-                <input id="income" name="income" type="text" placeholder="e.g. salaried job, self-employed, business owner, contract work" />
-                <small>You don’t need exact numbers – just a clear picture of how you earn money.</small>
-              </div>
-
-              <div class="field">
-                <label for="plan">Repayment or profit-sharing plan</label>
-                <textarea id="plan" name="plan" rows="3" placeholder="How do you plan to repay or share profit? Include timeline and how you expect the money to be generated." required></textarea>
-                <small>The more concrete and realistic this is, the easier it is for others to trust you.</small>
-              </div>
-
-              <div class="field field-inline">
-                <div>
-                  <label for="name">Name</label>
-                  <input id="name" name="name" type="text" placeholder="Your full name" required />
-                </div>
-                <div>
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="you@example.com" required />
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="message">Short background</label>
-                <textarea id="message" name="message" rows="3" placeholder="Tell us briefly who you are and what kind of people you hope to connect with." required></textarea>
-              </div>
-
-              <div class="checkbox-row">
-                <input id="agreement" name="agreement" type="checkbox" required />
-                <label for="agreement">
-                  I understand that any agreement must be written clearly between the people involved, and that I am responsible for my own legal, financial and tax decisions.
-                </label>
-              </div>
-
-              <button class="btn-primary" type="submit" style="margin-top:0.9rem;">Send request</button>
-              <div class="form-note">
-                This example form does not create an account, offer, contract or any promise of funding.
-                Please do not include sensitive data (ID numbers, passwords, private keys, seed phrases, etc.).
-              </div>
-
-              <div class="form-success" id="form-success">
-                Thank you. Your request has been recorded on this example page.
-                In a real implementation, this would be sent securely to the AmicBridge team for review.
-              </div>
-            </form>
-          </div>
-
-          <div class="side-note">
-            <strong>How we think about “trust”.</strong>
-            <p>
-              Trust on AmicBridge is not about a magic score. It is about how seriously a person treats responsibility:
-              whether they show their identity, explain their purpose, and describe a realistic plan.
-            </p>
-            <p style="margin-top:0.6rem;">
-              The platform’s job is to collect that information in a structured way so both sides can decide for themselves.
-              All actual agreements, contracts and transfers stay outside the platform.
-            </p>
-            <p style="margin-top:0.8rem;">
-              <strong>Contact the founder &amp; CEO</strong><br>
-              Robert &mdash; <a href="mailto:robertamicolsen@gmail.com">robertamicolsen@gmail.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="shell footer-inner">
-      <div>
-        © <span id="year"></span> AmicBridge. All rights reserved.
-        &nbsp;|&nbsp;
-        CEO: Robert &mdash;
-        <a href="mailto:robertamicolsen@gmail.com">robertamicolsen@gmail.com</a>
-      </div>
-      <div>
-        <a href="#terms">Terms</a> · <a href="#privacy">Privacy</a>
-      </div>
-    </div>
-  </footer>
-
-</div>
-
-<script>
-  // Year
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  function goToContact(intentValue) {
-    var select = document.getElementById("intent");
-    if (select && intentValue) {
-      select.value = intentValue;
-    }
-    var contact = document.getElementById("contact");
-    if (contact && contact.scrollIntoView) {
-      contact.scrollIntoView({ behavior: "smooth", block: "start" });
+      padding-top: 2.5rem;
     }
   }
-
-  document.getElementById("btn-request-loan")
-    .addEventListener("click", function () {
-      goToContact("Borrowing");
-    });
-
-  document.getElementById("btn-offer-lending")
-    .addEventListener("click", function () {
-      goToContact("Lending");
-    });
-
-  document.getElementById("btn-business-invest")
-    .addEventListener("click", function () {
-      goToContact("Business investment / profit sharing");
-    });
-
-  document.getElementById("btn-join-nav")
-    .addEventListener("click", function () {
-      goToContact("");
-    });
-
-  // Demo submit handler
-  var form = document.getElementById("contact-form");
-  var success = document.getElementById("form-success");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    success.classList.add("visible");
-    // In a real system, you would send form data to your backend here.
-  });
-</script>
-</body>
-</html>
+</style>
