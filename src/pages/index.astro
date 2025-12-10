@@ -8,9 +8,10 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
     <title>{pageTitle}</title>
     <meta
       name="description"
-      content="Bestill 3 eksklusive Lindt Excellence-sjokoladeplater for kun 399 NOK inkludert frakt."
+      content="Bestill 3 eksklusive Lindt Excellence-sjokoladeplater for kun 150 NOK inkludert frakt."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="image" href="/images/lindt-excellence.webp">
     <style>
       :root {
         --bg-dark: #101014;
@@ -67,8 +68,6 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
           padding: 24px 18px 32px;
         }
       }
-
-      /* LEFT SIDE – INFO & PRODUCTS */
 
       .branding {
         display: flex;
@@ -161,86 +160,21 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
         margin-bottom: 26px;
       }
 
-      .btn-primary,
-      .btn-ghost {
+      .btn-primary {
         border-radius: 999px;
         padding: 11px 18px;
-        font-size: 14px;
-        font-weight: 600;
-        border: none;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-        transition: transform 0.14s ease, box-shadow 0.14s ease,
-          background 0.18s ease, color 0.18s ease;
-      }
-
-      .btn-primary {
         background: linear-gradient(135deg, #f5d99f, #c2903d);
         color: #201407;
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
-      }
-
-      .btn-primary span.icon {
-        font-size: 16px;
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
-      }
-
-      .btn-ghost {
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        color: rgba(255, 255, 255, 0.8);
-        background: rgba(12, 13, 20, 0.6);
-      }
-
-      .btn-ghost:hover {
-        background: rgba(255, 255, 255, 0.04);
-        transform: translateY(-1px);
-      }
-
-      .trust-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        font-size: 11px;
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 24px;
-      }
-
-      .trust-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .trust-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, #98e3b2, #32b872);
-        box-shadow: 0 0 0 4px rgba(53, 184, 113, 0.23);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
       }
 
       .products {
         margin-top: 10px;
-        padding: 16px 16px 18px;
+        padding: 16px;
         border-radius: 18px;
-        background: radial-gradient(circle at top left, #343848 0, #171922 45%, #070810 100%);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-      }
-
-      .products-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: rgba(255, 255, 255, 0.86);
-        font-size: 13px;
-        margin-bottom: 10px;
+        background: radial-gradient(circle at top left, #343848, #070810);
       }
 
       .products-grid {
@@ -249,509 +183,116 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
         gap: 10px;
       }
 
-      @media (max-width: 700px) {
-        .products-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
       .product-card {
-        background: rgba(6, 6, 10, 0.9);
-        border-radius: 16px;
-        padding: 10px 10px 12px;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-
-      .product-image {
-        background: #f6f6f8;
-        border-radius: 14px;
-        padding: 12px 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        background: #121212;
+        border-radius: 12px;
+        padding: 10px;
+        text-align: center;
       }
 
       .product-image img {
-        max-width: 100%;
-        height: auto;
-        display: block;
+        width: 100%;
+        border-radius: 8px;
+        background: #fff;
       }
-
-      .product-name {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 500;
-      }
-
-      .product-note {
-        font-size: 11px;
-        color: rgba(255, 255, 255, 0.6);
-      }
-
-      /* RIGHT SIDE – ORDER FORM */
 
       .order-panel {
         background: var(--bg-light);
         border-radius: 28px;
-        padding: 20px 20px 22px;
-        box-shadow: var(--shadow-soft);
-        border: 1px solid var(--border-soft);
-      }
-
-      @media (max-width: 900px) {
-        .order-panel {
-          border-radius: 22px;
-        }
-      }
-
-      .order-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 10px;
-      }
-
-      .order-title {
-        font-size: 18px;
-        font-weight: 650;
-      }
-
-      .order-badge {
-        font-size: 11px;
-        padding: 5px 9px;
-        border-radius: 999px;
-        background: #e5f7eb;
-        color: #1f7e3e;
-        border: 1px solid #b5e5c4;
-      }
-
-      .order-summary {
-        font-size: 13px;
-        color: #4b4b52;
-        margin-bottom: 16px;
-      }
-
-      .bundle-line {
-        padding: 8px 10px;
-        border-radius: 14px;
-        background: #ffffff;
-        border: 1px dashed rgba(0, 0, 0, 0.08);
-        margin-bottom: 16px;
-        font-size: 13px;
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-      }
-
-      .bundle-price {
-        font-weight: 650;
-        color: #1c1b22;
-      }
-
-      form {
-        display: grid;
-        gap: 12px;
-      }
-
-      label {
-        font-size: 12px;
-        font-weight: 500;
-        color: #2c2c35;
-        display: block;
-        margin-bottom: 4px;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        border-radius: 12px;
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        padding: 10px 11px;
-        font-size: 13px;
-        font-family: inherit;
-        outline: none;
-        transition: border-color 0.14s ease, box-shadow 0.14s ease,
-          background 0.14s ease;
-        background: #ffffff;
-      }
-
-      input:focus,
-      textarea:focus {
-        border-color: var(--accent-dark);
-        box-shadow: 0 0 0 1px rgba(194, 139, 52, 0.3);
-      }
-
-      textarea {
-        resize: vertical;
-        min-height: 70px;
-      }
-
-      .inline-fields {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      @media (max-width: 520px) {
-        .inline-fields {
-          grid-template-columns: minmax(0, 1fr);
-        }
-      }
-
-      .hint {
-        font-size: 11px;
-        color: #6a6b74;
-        margin-top: -4px;
-      }
-
-      .submit-row {
-        margin-top: 6px;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-
-      .btn-submit {
-        width: 100%;
-        border-radius: 999px;
-        padding: 11px 16px;
-        border: none;
-        background: linear-gradient(135deg, #c99639, #f4dfaa);
-        font-weight: 650;
-        font-size: 14px;
-        cursor: pointer;
-        color: #301c05;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        box-shadow: var(--shadow-small);
-        transition: transform 0.14s ease, box-shadow 0.14s ease,
-          filter 0.14s ease;
-      }
-
-      .btn-submit span.icon {
-        font-size: 16px;
-      }
-
-      .btn-submit:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
-        filter: brightness(1.03);
-      }
-
-      .submit-note {
-        font-size: 11px;
-        color: #676976;
-      }
-
-      .contact {
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px dashed rgba(0, 0, 0, 0.18);
-        font-size: 11px;
-        color: #666673;
-      }
-
-      .contact strong {
-        color: #262631;
-      }
-
-      .contact a {
-        color: #333399;
-        text-decoration: none;
-      }
-
-      .contact a:hover {
-        text-decoration: underline;
-      }
-
-      footer {
-        padding: 0 32px 20px;
-        font-size: 11px;
-        color: rgba(255, 255, 255, 0.32);
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-      }
-
-      @media (max-width: 900px) {
-        footer {
-          padding: 0 18px 18px;
-          flex-direction: column;
-        }
+        padding: 20px;
       }
     </style>
   </head>
+
   <body>
     <main>
       <section class="page">
         <div class="page-inner">
-          <!-- LEFT: Hero & products -->
+
           <div>
             <div class="branding">
               <div class="brand-mark">R</div>
-              <div class="brand-name">Eksklusivt tilbud • Begrenset parti</div>
+              <div class="brand-name">Eksklusivt tilbud</div>
             </div>
 
-            <h1>Lindt Excellence gavepakke – 3 x 100&nbsp;g</h1>
+            <h1>Lindt Excellence gavepakke – 3 x 100 g</h1>
             <p class="subtitle">
-              Tre nøye utvalgte premium-sjokoladeplater fra Lindt Excellence.
-              Perfekt som gave, vertinnegave – eller for deg som vil unne
-              deg noe ekstra godt.
+              Tre nøye utvalgte premium-sjokoladeplater. Perfekt gave eller snacks.
             </p>
 
             <div class="price-line">
-              <div class="price-main">150&nbsp;NOK</div>
+              <div class="price-main">150 NOK</div>
               <div class="price-detail">inkludert frakt i Norge</div>
             </div>
 
             <div class="pill-row">
               <div class="pill pill--gold">Trygg bestilling</div>
               <div class="pill">Betaling avtales på e-post</div>
-              <div class="pill">Begrenset antall</div>
             </div>
 
             <div class="cta-row">
-              <a href="#bestill" class="btn-primary">
-                <span class="icon">🛒</span>
-                <span>Bestill pakken nå</span>
-              </a>
-              <a href="#kontakt" class="btn-ghost">Kontakt Robert direkte</a>
-            </div>
-
-            <div class="trust-row">
-              <div class="trust-item">
-                <span class="trust-dot"></span>
-                <span>Sikker bestillingsforespørsel (ingen kortinfo på nett)</span>
-              </div>
-              <div class="trust-item">
-                <span>✔ Sporet dialog på e-post</span>
-              </div>
+              <a href="#bestill" class="btn-primary">Bestill pakken nå</a>
             </div>
 
             <div class="products">
-              <div class="products-title">
-                <span>Dette får du i pakken</span>
-                <span style="font-size: 11px; opacity: 0.8;">3 x 100&nbsp;g</span>
-              </div>
               <div class="products-grid">
-                <!-- All three cards use your uploaded image -->
                 <article class="product-card">
                   <div class="product-image">
-                    <img
-                      src="/images/lindt%20excellenc.webp"
-                      alt="Lindt Excellence sjokoladeplate"
-                      loading="lazy"
-                    />
+                    <img src="/images/lindt-excellence.webp" alt="Lindt">
                   </div>
-                  <div class="product-name">White Vanilla Bar 100&nbsp;g</div>
-                  <div class="product-note">Myk hvit sjokolade med ekte vanilje.</div>
+                  <div class="product-name">White Vanilla 100 g</div>
                 </article>
 
                 <article class="product-card">
                   <div class="product-image">
-                    <img
-                      src="/images/lindt%20excellenc.webp"
-                      alt="Lindt Excellence sjokoladeplate"
-                      loading="lazy"
-                    />
+                    <img src="/images/lindt-excellence.webp" alt="Lindt">
                   </div>
-                  <div class="product-name">Dark Sea Salt Bar 100&nbsp;g</div>
-                  <div class="product-note">
-                    Mørk sjokolade med fint havsalt – søtt og salt i balanse.
-                  </div>
+                  <div class="product-name">Dark Sea Salt 100 g</div>
                 </article>
 
                 <article class="product-card">
                   <div class="product-image">
-                    <img
-                      src="/images/lindt%20excellenc.webp"
-                      alt="Lindt Excellence sjokoladeplate"
-                      loading="lazy"
-                    />
+                    <img src="/images/lindt-excellence.webp" alt="Lindt">
                   </div>
-                  <div class="product-name">Dark Roasted Hazelnut Bar 100&nbsp;g</div>
-                  <div class="product-note">
-                    Sprø ristede hasselnøtter i fyldig mørk sjokolade.
-                  </div>
+                  <div class="product-name">Roasted Hazelnut 100 g</div>
                 </article>
               </div>
             </div>
           </div>
 
-          <!-- RIGHT: Order form -->
           <div id="bestill" class="order-panel">
-            <div class="order-header">
-              <div>
-                <div class="order-title">Bestill Lindt Excellence-pakken</div>
-                <div class="order-summary">
-                  Fyll inn informasjonen under, så får du en bekreftelse og detaljer
-                  om betaling fra Robert på e-post.
-                </div>
-              </div>
-              <div class="order-badge">Trygg forespørsel</div>
-            </div>
-
-            <div class="bundle-line">
-              <div>
-                <strong>3 x Lindt Excellence 100&nbsp;g</strong><br />
-                White Vanilla · Dark Sea Salt · Dark Roasted Hazelnut
-              </div>
-              <div class="bundle-price">
-                150&nbsp;NOK<br /><span style="font-size:11px; font-weight:400;"
-                  >inkl. frakt</span
-                >
-              </div>
-            </div>
+            <h2>Bestill Lindt Excellence-pakken</h2>
 
             <form id="order-form">
-              <div>
-                <label for="name">Fullt navn *</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  required
-                />
-              </div>
+              <label>Fullt navn</label>
+              <input name="name" required />
 
-              <div>
-                <label for="email">E-post *</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  required
-                />
-              </div>
+              <label>E-post</label>
+              <input name="email" type="email" required />
 
-              <div>
-                <label for="phone">Telefon *</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  autocomplete="tel"
-                  required
-                />
-                <div class="hint">Brukes kun ved spørsmål om leveringen.</div>
-              </div>
+              <label>Adresse</label>
+              <input name="address" required />
 
-              <div>
-                <label for="address">Adresse *</label>
-                <input
-                  id="address"
-                  name="address"
-                  type="text"
-                  autocomplete="street-address"
-                  required
-                />
-              </div>
+              <label>Kommentar</label>
+              <textarea name="message"></textarea>
 
-              <div class="inline-fields">
-                <div>
-                  <label for="postal">Postnummer *</label>
-                  <input
-                    id="postal"
-                    name="postal"
-                    type="text"
-                    autocomplete="postal-code"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="city">Sted *</label>
-                  <input
-                    id="city"
-                    name="city"
-                    type="text"
-                    autocomplete="address-level2"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label for="quantity">Antall pakker *</label>
-                <input
-                  id="quantity"
-                  name="quantity"
-                  type="number"
-                  min="1"
-                  value="1"
-                  required
-                />
-                <div class="hint">
-                  Totalpris beregnes som 150&nbsp;NOK × antall pakker (inkl. frakt).
-                </div>
-              </div>
-
-              <div>
-                <label for="message">Kommentar (valgfritt)</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="F.eks. ønsket leveringstidspunkt, melding hvis det er en gave, osv."
-                ></textarea>
-              </div>
-
-              <div class="submit-row">
-                <button type="submit" class="btn-submit">
-                  <span class="icon">📮</span>
-                  <span>Send bestillingsforespørsel</span>
-                </button>
-                <div class="submit-note">
-                  Når du klikker &laquo;Send bestillingsforespørsel&raquo; åpnes e-postprogrammet
-                  ditt med en ferdig utfylt e-post til Robert. Du kan lese over og
-                  bekrefte før du sender.
-                </div>
-              </div>
+              <button>Send forespørsel</button>
             </form>
 
-            <div id="kontakt" class="contact">
-              <div><strong>Kontaktinformasjon</strong></div>
-              <div>CEO: Robert</div>
-              <div>
-                E-post:
-                <a href="mailto:Robertamicolsen@gmail.com">
-                  Robertamicolsen@gmail.com
-                </a>
-              </div>
-            </div>
+            <p>CEO Robert – <a href="mailto:Robertamicolsen@gmail.com">Robertamicolsen@gmail.com</a></p>
           </div>
         </div>
-
-        <footer>
-          <span>&copy; {new Date().getFullYear()} Lindt Excellence – privat salg.</span>
-          <span>
-            Bestilling skjer som forespørsel. Ingen kort- eller bankinformasjon
-            lagres på denne nettsiden.
-          </span>
-        </footer>
       </section>
     </main>
 
-    <script type="module">
-      // Turn form into a nicely formatted mailto email
-      const form = document.getElementById("order-form");
-
-      if (form) {
-        form.addEventListener("submit", (event) => {
-          event.preventDefault();
-
-          const data = new FormData(form);
-
-          const lines = [
-            "Ny bestillingsforespørsel for Lindt Excellence-pakke:",
-            "",
-            `Navn: ${data.get("name") || ""}`,
-            `E-post: ${data.get("email") || ""}`,
-            `Telefon: ${data.get("phone") || ""}`,
-            "",
-            "Leveringsadresse:
+    <script>
+      const form=document.getElementById('order-form');
+      form.addEventListener('submit',e=>{
+        e.preventDefault();
+        const d=new FormData(form);
+        const body=encodeURIComponent(`Navn: ${d.get('name')}\nEpost: ${d.get('email')}\nAdresse: ${d.get('address')}\nKommentar: ${d.get('message')}`);
+        window.location=`mailto:Robertamicolsen@gmail.com?subject=Lindt bestilling&body=${body}`;
+      });
+    </script>
+  </body>
+</html>
