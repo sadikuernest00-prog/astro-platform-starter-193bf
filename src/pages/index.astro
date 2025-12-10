@@ -539,12 +539,12 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
                 <span style="font-size: 11px; opacity: 0.8;">3 x 100&nbsp;g</span>
               </div>
               <div class="products-grid">
+                <!-- All three cards use your uploaded image -->
                 <article class="product-card">
                   <div class="product-image">
-                    <!-- Legg inn ditt faktiske bilde her, i /public/images -->
                     <img
-                      src="/images/lindt-white-vanilla-100g.png"
-                      alt="Lindt Excellence White Vanilla Bar 100g"
+                      src="/images/lindt%20excellenc.webp"
+                      alt="Lindt Excellence sjokoladeplate"
                       loading="lazy"
                     />
                   </div>
@@ -555,8 +555,8 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
                 <article class="product-card">
                   <div class="product-image">
                     <img
-                      src="/images/lindt-dark-sea-salt-100g.png"
-                      alt="Lindt Excellence Dark Sea Salt Bar 100g"
+                      src="/images/lindt%20excellenc.webp"
+                      alt="Lindt Excellence sjokoladeplate"
                       loading="lazy"
                     />
                   </div>
@@ -569,8 +569,8 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
                 <article class="product-card">
                   <div class="product-image">
                     <img
-                      src="/images/lindt-dark-roasted-hazelnut-100g.png"
-                      alt="Lindt Excellence Dark Roasted Hazelnut Bar 100g"
+                      src="/images/lindt%20excellenc.webp"
+                      alt="Lindt Excellence sjokoladeplate"
                       loading="lazy"
                     />
                   </div>
@@ -601,7 +601,11 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
                 <strong>3 x Lindt Excellence 100&nbsp;g</strong><br />
                 White Vanilla · Dark Sea Salt · Dark Roasted Hazelnut
               </div>
-              <div class="bundle-price">150&nbsp;NOK<br /><span style="font-size:11px; font-weight:400;">inkl. frakt</span></div>
+              <div class="bundle-price">
+                150&nbsp;NOK<br /><span style="font-size:11px; font-weight:400;"
+                  >inkl. frakt</span
+                >
+              </div>
             </div>
 
             <form id="order-form">
@@ -750,25 +754,4 @@ const pageTitle = "Lindt Excellence – Spesialtilbud";
             `E-post: ${data.get("email") || ""}`,
             `Telefon: ${data.get("phone") || ""}`,
             "",
-            "Leveringsadresse:",
-            `Adresse: ${data.get("address") || ""}`,
-            `Postnummer: ${data.get("postal") || ""}`,
-            `Sted: ${data.get("city") || ""}`,
-            "",
-            `Antall pakker: ${data.get("quantity") || "1"}`,
-            "",
-            `Kommentar fra kunde:`,
-            `${data.get("message") || "(ingen kommentar)"}`,
-          ];
-
-          const subject = encodeURIComponent(
-            "Bestilling – Lindt sjokoladepakke (150 NOK inkl. frakt)"
-          );
-          const body = encodeURIComponent(lines.join("\n"));
-
-          window.location.href = `mailto:Robertamicolsen@gmail.com?subject=${subject}&body=${body}`;
-        });
-      }
-    </script>
-  </body>
-</html>
+            "Leveringsadresse:
